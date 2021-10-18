@@ -1,0 +1,732 @@
+.creditos .imagen_portada,
+#final_cuento .creditos .imagen_portada{
+/*    display: grid;*/
+   background-image: url("../img/cenicienta/01.jpg");
+
+    background-size: cover;
+    background-position: 58%;
+    background-repeat: no-repeat;
+
+/*    background-color: #fff;*/
+}
+
+.title h2{
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+#escena_00 .fondo{ 
+    background-image: url("../img/cenicienta/esc_0_fondo.jpg");
+/*    background-image: url("../img/FOLDER/testpos0.jpg");*/
+}
+
+#escena_00 .cenicienta{
+    width: 470px;
+    height: 400px;
+    position: absolute;
+    z-index: 6;
+    top: 49%;
+    left: 42%;
+    background-position: -300% 0%;
+    background-size: 300%;
+    background-repeat: repeat-x;
+}
+.spriteCenicienta{ 
+    background-image: url("../img/cenicienta/sprite/escena01/cenicienta.png");
+/*    background-color: rgba(0,0,0,1);*/
+/*    background-color: black;*/
+    background-repeat: no-repeat;
+}
+
+/* PAJARO 1 */
+
+#escena_00 .pajaro1{
+    width: 115px;
+    height: 150px;
+    position: absolute;
+    z-index: 6;
+    top: 21.6%;
+    left: 4%;
+    background-position: -200% 0%;
+    background-size: 200%;
+    background-repeat: repeat-x;
+}
+.spritePajaro1{ 
+    background-image: url("../img/cenicienta/sprite/escena01/pajaro1.png");
+/*    background-color: rgba(0,0,0,1);*/
+/*    background-color: black;*/
+    background-repeat: no-repeat;
+}
+
+/*PAJARO 2*/
+#escena_00 .pajaro2{
+    width: 100px;
+    height: 150px;
+    position: absolute;
+    z-index: 6;
+    top: 32%;
+    left: 72.9%;
+    background-position: -200% 0%;
+    background-size: 200%;
+    background-repeat: repeat-x;
+}
+.spritePajaro2{ 
+    background-image: url("../img/cenicienta/sprite/escena01/pajaro2.png");
+/*    background-color: rgba(0,0,0,1);*/
+/*    background-color: black;*/
+    background-repeat: no-repeat;
+}
+
+/*MADRASTRA */
+#escena_00 .madrastra{
+    width: 165px;
+    height: 269px;
+    position: absolute;
+    z-index: 7;
+    top: 22.5%;
+    left: 35.2%;
+    background-position: -200% 0%;
+    background-size: 200%;
+    background-repeat: repeat-x;
+}
+.spriteMadrastra{ 
+    background-image: url("../img/cenicienta/sprite/escena01/sprite_madrastra.png");
+/*    background-color: rgba(0,0,0,1);*/
+/*    background-color: black;*/
+    background-repeat: no-repeat;
+}
+
+/* HERMANASTRA 1 */
+#escena_00 .hermanastra1{
+    width: 127px;
+    height: 391px;
+    position: absolute;
+    z-index: 7;
+    top: 16.4%;
+    left: 32.6%;
+    background-position: -200% 0%;
+    background-size: 200%;
+    background-repeat: repeat-x;
+}
+.spriteHermanastra1{ 
+    background-image: url("../img/cenicienta/sprite/escena01/sprite_hermana_1.png");
+/*    background-color: rgba(0,0,0,1);*/
+/*    background-color: black;*/
+    background-repeat: no-repeat;
+}
+
+/* HERMANASTRA 2 */
+#escena_00 .hermanastra2{
+    width: 124px;
+    height: 410px;
+    position: absolute;
+    z-index: 6;
+    top: 14.7%;
+    left: 41.5%;
+    background-position: -200% 0%;
+    background-size: 200%;
+    background-repeat: repeat-x;
+}
+.spriteHermanastra2{ 
+    background-image: url("../img/cenicienta/sprite/escena01/sprite_hermana_2.png");
+/*    background-color: rgba(0,0,0,1);*/
+/*    background-color: black;*/
+    background-repeat: no-repeat;
+}
+
+#escena_00 .fuego{
+    width: 370px;
+    height: 50px;
+    position: absolute;
+    z-index: 6;
+    top: 69.5%;
+    left: 87.8%;
+    background-position: -200% 0%;
+    background-size: 200%;
+    background-repeat: repeat-x;
+}
+.spriteFuego{ 
+    background-image: url("../img/cenicienta/sprite/escena01/fuego.png");
+/*    background-color: rgba(0,0,0,1);*/
+/*    background-color: black;*/
+    background-repeat: no-repeat;
+}
+
+#escena_00 .humo2{
+    width: 70px;
+    height: 190px;
+    position: absolute;
+    z-index: 6;
+    top: 60.5%;
+    left: 84.8%;
+    background-position: -100% 0%;
+    background-size: 100%;
+    background-repeat: repeat-x;
+}
+.spriteHumo2{ 
+    background-image: url("../img/cenicienta/sprite/escena01/humo2.png");
+/*    background-color: rgba(0,0,0,1);*/
+/*    background-color: black;*/
+    background-repeat: no-repeat;
+}
+
+#escena_01 .mensajero{
+    width: 305px;
+    height: 650px;
+    position: absolute;
+    z-index: 6;
+    top: 39.5%;
+    left: 47%;
+    background-position: -300% 0%;
+    background-size: 300%;
+    background-repeat: repeat-x;
+}
+.spriteMensajero{ 
+    background-image: url("../img/cenicienta/sprite/escena02/sprite_paje_rey.png");
+/*    background-color: rgba(0,0,0,1);*/
+/*    background-color: black;*/
+    background-repeat: no-repeat;
+}
+
+#escena_01 .cenicienta02{
+    width: 250px;
+    height: 420px;
+    position: absolute;
+    z-index: 6;
+    top: 56.9%;
+    left: -4%;
+    background-position: -200% 0%;
+    background-size: 200%;
+    background-repeat: repeat-x;
+}
+.spriteCenicienta02{ 
+    background-image: url("../img/cenicienta/sprite/escena02/cenicienta.png");
+/*    background-color: rgba(0,0,0,1);*/
+/*    background-color: black;*/
+    background-repeat: no-repeat;
+}
+
+
+/* HERMANA ROSA */
+
+#escena_01 .hermana1 {
+    width: 255px;
+    height: 600px;
+    position: absolute;
+    z-index: 6;
+    top: 48%;
+    left: 3%;
+    background-position: -200% 0%;
+    background-size: 200%;
+    background-repeat: repeat-x;
+}
+.spriteHermana1{ 
+    background-image: url("../img/cenicienta/sprite/escena02/hermana_rosada.png");
+/*    background-color: rgba(0,0,0,1);*/
+/*    background-color: black;*/
+    background-repeat: no-repeat;
+}
+
+/* MADRASTRA */
+
+#escena_01 .madrastra_es01 {
+    width: 227px;
+    height: 800px;
+    position: absolute;
+    z-index: 6;
+    top: 65%;
+    left: 12%;
+    background-position: -200% 0%;
+    background-size: 200%;
+    background-repeat: repeat-x;
+}
+.spriteMadrastra_es01{ 
+    background-image: url("../img/cenicienta/sprite/escena02/madrastra.png");
+/*    background-color: rgba(0,0,0,1);*/
+/*    background-color: black;*/
+    background-repeat: no-repeat;
+}
+
+/* HERMANA VERDE */
+
+#escena_01 .hermana2 {
+    width: 215px;
+    height: 600px;
+    position: absolute;
+    z-index: 6;
+    top: 43%;
+    left: 19%;
+    background-position: -200% 0%;
+    background-size: 200%;
+    background-repeat: repeat-x;
+}
+.spriteHermana2{ 
+    background-image: url("../img/cenicienta/sprite/escena02/hermana_verde.png");
+/*    background-color: rgba(0,0,0,1);*/
+/*    background-color: black;*/
+    background-repeat: no-repeat;
+}
+
+/* GUERRERO */
+
+#escena_01 .guerrero {
+    width: 230px;
+    height: 600px;
+    position: absolute;
+    z-index: 6;
+    top: 54%;
+    left: 26%;
+    background-position: -200% 0%;
+    background-size: 200%;
+    background-repeat: repeat-x;
+}
+
+.spriteGuerrero{ 
+    background-image: url("../img/cenicienta/sprite/escena02/guerrero.png");
+/*    background-color: rgba(0,0,0,1);*/
+/*    background-color: black;*/
+    background-repeat: no-repeat;
+}
+
+/* DONCELLA */
+
+#escena_01 .doncella {
+    width: 170px;
+    height: 600px;
+    position: absolute;
+    z-index: 5;
+    top: 49%;
+    left: 34%;
+    background-position: -200% 0%;
+    background-size: 200%;
+    background-repeat: repeat-x;
+}
+
+.spriteDoncella{ 
+    background-image: url("../img/cenicienta/sprite/escena02/doncella.png");
+/*    background-color: rgba(0,0,0,1);*/
+/*    background-color: black;*/
+    background-repeat: no-repeat;
+}
+
+/* GRANJERO */
+
+#escena_01 .granjero {
+    width: 255px;
+    height: 600px;
+    position: absolute;
+    z-index: 5;
+    top: 52%;
+    left: 68.5%;
+    background-position: -200% 0%;
+    background-size: 200%;
+    background-repeat: repeat-x;
+}
+
+.spriteGranjero{ 
+    background-image: url("../img/cenicienta/sprite/escena02/granjero.png");
+/*    background-color: rgba(0,0,0,1);*/
+/*    background-color: black;*/
+    background-repeat: no-repeat;
+}
+
+/* PINTOR */
+
+#escena_01 .pintor {
+    width: 210px;
+    height: 600px;
+    position: absolute;
+    z-index: 5;
+    top: 56%;
+    left: 75.5%;
+    background-position: -200% 0%;
+    background-size: 200%;
+    background-repeat: repeat-x;
+}
+
+.spritePintor{ 
+    background-image: url("../img/cenicienta/sprite/escena02/pintor.png");
+/*    background-color: rgba(0,0,0,1);*/
+/*    background-color: black;*/
+    background-repeat: no-repeat;
+}
+
+/* ARBOLES */
+
+#escena_01 .arboles {
+    width: 3333px;
+    height: 763px;
+    position: absolute;
+    z-index: 12;
+    top: -8%;
+    left: -37.5%;
+    background-position: -100% 0%;
+    background-size: 100%;
+    background-repeat: repeat-x;
+}
+
+.spriteArboles { 
+    background-image: url("../img/cenicienta/sprite/escena02/arboles.png");
+/*    background-color: rgba(0,0,0,1);*/
+/*    background-color: black;*/
+    background-repeat: no-repeat;
+}
+
+/* SOL => SOL alternativo*/
+
+#escena_01 .solAlternativo {
+    width: 162px;
+    height: 200px;
+    position: absolute;
+    z-index: 20;
+    top: 18%;
+    left: 65.5%;
+    background-position: -200% 0%;
+    background-size: 200%;
+    background-repeat: repeat-x;
+}
+
+.spriteSolAlternativo { 
+    background-image: url("../img/cenicienta/sprite/escena02/solAlternativo.png");
+/*    background-color: rgba(0,0,0,1);*/
+/*    background-color: black;*/
+    background-repeat: no-repeat;
+}
+
+/* SOL2 */
+
+/* #escena_01 .sol2 {
+    width: 162px;
+    height: 200px;
+    position: absolute;
+    z-index: 20;
+    top: 23%;
+    left: 65.5%;
+    background-position: -100% 0%;
+    background-size: 100%;
+    background-repeat: repeat-x;
+}
+
+.spriteSol2 { 
+    background-image: url("../img/cenicienta/sprite/escena02/sol_b.png");
+    background-repeat: no-repeat;
+} */
+
+/* NUBE1 */
+
+#escena_01 .nube1 {
+    width: 275px;
+    height: 779px;
+    position: absolute;
+    z-index: 11;
+    top: 16%;
+    left: 36.5%;
+    background-position: -100% 0%;
+    background-size: 100%;
+    background-repeat: repeat-x;
+}
+
+.spriteNube1 { 
+    background-image: url("../img/cenicienta/sprite/escena02/nube1.png");
+/*    background-color: rgba(0,0,0,1);*/
+/*    background-color: black;*/
+    background-repeat: no-repeat;
+}
+
+/* NUBE2 */
+
+#escena_01 .nube2 {
+    width: 240px;
+    height: 763px;
+    position: absolute;
+    z-index: 11;
+    top: 24%;
+    left: 87.5%;
+    background-position: -100% 0%;
+    background-size: 100%;
+    background-repeat: repeat-x;
+}
+
+.spriteNube2 { 
+    background-image: url("../img/cenicienta/sprite/escena02/nube2.png");
+/*    background-color: rgba(0,0,0,1);*/
+/*    background-color: black;*/
+    background-repeat: no-repeat;
+}
+
+
+#escena_03 .fondo #cocinero_raton{
+    width: 26%;
+    position: absolute;
+    z-index: 6;
+    top: 60%;
+    left: 52%;
+    pointer-events: none;
+}
+
+#escena_04 .wafle {
+    width: 400px;
+    height: 500px;
+    position: absolute;
+    z-index: 4;
+    top: 57%;
+    left: 75%;
+    background-position: -200% 0%;
+    background-size: 200%;
+    background-repeat: repeat-x;
+}
+.spriteWa{ 
+    background-image: url("../img/fiesta/sprite/comiendo_escena_05.png");
+/*    background-color: rgba(0,0,0,1);*/
+/*    background-color: black;*/
+    background-repeat: no-repeat;
+}
+
+#escena_05 .estrellas{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 6;
+    top: -22px;
+    left: 0px;
+    background-position: -400% 0%;
+    background-size: 400%;
+    background-repeat: repeat-x;
+}
+
+.spriteEs{ 
+    background-image: url("../img/fiesta/sprite/estrellas_escena_06.png");
+/*    background-color: rgba(0,0,0,1);*/
+/*    background-color: black;*/
+    background-repeat: no-repeat;
+}
+
+#escena_06 .ojos{
+    width: 400px;
+    height: 600px;
+    position: absolute;
+    z-index: 6;
+    top: 49%;
+    left: 37%;
+    background-position: -300% 0%;
+    background-size: 300%;
+    background-repeat: repeat-x;
+}
+
+.spriteOj{ 
+    background-image: url("../img/fiesta/sprite/dudoso_escena_07.png");
+/*    background-color: rgba(0,0,0,1);*/
+/*    background-color: black;*/
+    background-repeat: no-repeat;
+}
+
+
+
+#escena_07 .feliz{
+    width: 1000px;
+    height: 1000px;
+    position: absolute;
+    z-index: 4;
+    top: 7%;
+    left: 30%;
+    background-position: -1700% 0%;
+    background-size: 1700%;
+    background-repeat: repeat-x;
+
+}
+
+.spriteFe{ 
+    background-image: url("../img/fiesta/sprite/feliz_02_escena_08.png");
+/*    background-color: rgba(0,0,0,1);*/
+/*    background-color: black;*/
+    background-repeat: no-repeat;
+}
+
+#escena_07 .perro{
+    width: 500px;
+    height: 500px;
+    position: absolute;
+    z-index: 4;
+    top: 53%;
+    left: 8%;
+    background-position: -1700% 0%;
+    background-size: 1700%;
+    background-repeat: repeat-x;
+}
+
+.spritePe{ 
+    background-image: url("../img/fiesta/sprite/musico_01_escena_08.png");
+/*    background-color: rgba(0,0,0,1);*/
+/*    background-color: black;*/
+    background-repeat: no-repeat;
+}
+
+#escena_08 .sergio {
+    width: 450px;
+    height: 550px;
+    position: absolute;
+    z-index: 6;
+    top: 17%;
+    left: 38%;
+    background-position: -200% 0%;
+    background-size: 200%;
+    background-repeat: repeat-x;
+}
+.spriteSr{ 
+    background-image: url("../img/fiesta/sprite/dance_06_escena_09.png");
+/*    background-color: rgba(0,0,0,1);*/
+/*    background-color: black;*/
+    background-repeat: no-repeat;
+}
+
+#escena_08 .dance01 {
+    width: 17%;
+    height: 46%;
+    position: absolute;
+    z-index: 6;
+    top: 47%;
+    left: 58%;
+    background-position: -200% 0%;
+    background-size: 200%;
+    background-repeat: repeat-x;
+}
+.spriteD01{ 
+    background-image: url("../img/fiesta/sprite/dance_01_escena_09.png");
+/*    background-color: rgba(0,0,0,1);*/
+/*    background-color: black;*/
+    background-repeat: no-repeat;
+}
+
+#escena_08 .dance02 {
+    width: 16%;
+    height: 45%;
+    position: absolute;
+    z-index: 7;
+    top: 46%;
+    left: 50%;
+    background-position: -200% 0%;
+    background-size: 200%;
+    background-repeat: repeat-x;
+}
+.spriteD02{ 
+    background-image: url("../img/fiesta/sprite/dance_02_escena_09.png");
+/*    background-color: rgba(0,0,0,1);*/
+/*    background-color: black;*/
+    background-repeat: no-repeat;
+}
+#escena_08 .dance03 {
+    width: 17%;
+    height: 41%;
+    position: absolute;
+    z-index: 7;
+    top: 47%;
+    left: 38%;
+    background-position: -200% 0%;
+    background-size: 200%;
+    background-repeat: repeat-x;
+}
+.spriteD03{ 
+    background-image: url("../img/fiesta/sprite/dance_03_escena_09.png");
+/*    background-color: rgba(0,0,0,1);*/
+/*    background-color: black;*/
+    background-repeat: no-repeat;
+}
+#escena_08 .dance04 {
+    width: 14%;
+    height: 38%;
+    position: absolute;
+    z-index: 6;
+    top: 54%;
+    left: 31%;
+    background-position: -200% 0%;
+    background-size: 200%;
+    background-repeat: repeat-x;
+}
+.spriteD04{ 
+    background-image: url("../img/fiesta/sprite/dance_04_escena_09.png");
+/*    background-color: rgba(0,0,0,1);*/
+/*    background-color: black;*/
+    background-repeat: no-repeat;
+}
+#escena_08 .dance05 {
+    width: 12%;
+    height: 36%;
+    position: absolute;
+    z-index: 5;
+    top: 53%;
+    left: 67%;
+    background-position: -200% 0%;
+    background-size: 200%;
+    background-repeat: repeat-x;
+}
+.spriteD05{ 
+    background-image: url("../img/fiesta/sprite/dance_05_escena_09.png");
+/*    background-color: rgba(0,0,0,1);*/
+/*    background-color: black;*/
+    background-repeat: no-repeat;
+}
+
+
+
+#escena_01 .fondo{ 
+    background-image: url("../img/cenicienta/esc_1_fondo.jpg");
+/*    background-image: url("../img/FOLDER/testpos1.jpg");*/
+}
+
+#escena_02 .fondo{ 
+    background-image: url("../img/fiesta/esc_2_fondo.jpg");
+/*    background-image: url("../img/FOLDER/testpos2.jpg");*/
+}
+
+#escena_03 .fondo{ 
+    background-image: url("../img/fiesta/esc_3_fondo.jpg");
+/*    background-image: url("../img/FOLDER/testpos3.jpg");*/
+}
+
+#escena_04 .fondo{ 
+    background-image: url("../img/fiesta/esc_4_fondo.jpg");
+/*    background-image: url("../img/FOLDER/testpos4.jpg");*/
+}
+
+#escena_05 .fondo{ 
+    background-image: url("../img/fiesta/esc_5_fondo.jpg");
+/*    background-image: url("../img/FOLDER/testpos5.jpg");*/
+}
+
+#escena_06 .fondo{           
+    background-image: url("../img/fiesta/esc_6_fondo.jpg");
+/*    background-image: url("../img/FOLDER/testpos6.jpg");*/
+}
+
+#escena_07 .fondo{ 
+    background-image: url("../img/fiesta/esc_7_fondo.jpg");
+/*    background-image: url("../img/FOLDER/testpos7.jpg");*/
+}
+
+#escena_08 .fondo{ 
+    background-image: url("../img/fiesta/esc_8_fondo.jpg");
+/*    background-image: url("../img/FOLDER/testpos9.jpg");*/
+}
+
+
+#escena_00 .btn_interact{ top: 400px; left: 422px;}
+#escena_01 .btn_interact{ top: 458px; left: 1300px;}
+#escena_02 .btn_interact {top: 500px; left: 200px;}
+#escena_03 .btn_interact {top: 425px; left: 918px;}
+#escena_04 .btn_interact{ top: 600px; left: 1463px; }
+#escena_05 .btn_interact{ top: 60%; left: 59%;}
+#escena_06 .btn_interact{ top: 473px; left: 689px;}
+#escena_07 .btn_interact{ top: 47%; left: 62%;}
+#escena_08 .btn_interact { top: 450px; left: 960px;}
+
+
+
+
+
+
+
+
+
+
+
