@@ -113,21 +113,21 @@ let JSON_CUENTO = {
             parrafos:
             [
                 {
-                    texto: "Sartén en mano, el chef Sergio rescata el panqueque de su impecable vuelta por los aires,<br>al tiempo que revuelve vigorosamente la salsa de chocolate.",
-                    tiempo:[0,10.7,0.5] 
+                    texto: "Cenicienta lloraba amargamente por no poder ir al baile.",
+                    tiempo:[0,4.2,0.5] 
                 },
                 {
-                    texto: "Los ayudantes de cocina siguen sus rápidas instrucciones:",
-                    tiempo:[11.1,15.4,0.4] 
+                    texto: "De pronto apareció un hada que convirtió con su varita mágica sus cenicientos vestidos en un elegante traje,<br>y una calabaza del jardín en un carruaje con caballos y cochero.",
+                    tiempo:[4.7,17.0,0.5] 
                 },
                 {
-                    texto: "¡amasar, cortar, hornear!<br>¡Atención, que se queman las galletas!",
-                    tiempo:[15.7,21.2,0.6] 
+                    texto: "Cenicienta, soy tu hada madrina.",
+                    tiempo:[17.5,20.2,0.5] 
                 },
                 
                 {
-                    texto: "De pronto, Sergio recuerda que sus primos Santiago y Laura tienen tantas ganas de cocinar…",
-                    tiempo:[21.7,29,0.6] 
+                    texto: "Recuerda que el encantamiento durará solo hasta las doce de la noche.",
+                    tiempo:[20.7,28,0.5]  
                 },
                 
                 
@@ -718,7 +718,9 @@ let ANIM = {
          ANIM.anim_interact_mujeres2 = new TimelineMax({repeat:2}); // creo la interacción
          ANIM.anim_interact_mujeres2
             .addLabel('inicio')
-            .fromTo('#escena_02 .hermanaEs01', 2,{backgroundPosition:'0% 0%'},{backgroundPosition:'-200% 0%', ease: SteppedEase.config(2)})
+            .fromTo('#escena_02 .hermana2Es02', 2,{backgroundPosition:'0% 0%'},{backgroundPosition:'-200% 0%', ease: SteppedEase.config(2)})
+            .fromTo('#escena_02 .hermanaEs02', 2,{backgroundPosition:'0% 0%'},{backgroundPosition:'-200% 0%', ease: SteppedEase.config(2)})
+            .fromTo('#escena_02 .madrastraEs02', 2,{backgroundPosition:'0% 0%'},{backgroundPosition:'-200% 0%', ease: SteppedEase.config(2)})
             .addLabel('final');
          ANIM.anim_interact_mujeres2.pause();
          
