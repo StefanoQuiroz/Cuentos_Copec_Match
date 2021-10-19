@@ -84,37 +84,32 @@ let JSON_CUENTO = {
         },
         {
             nombre:"Escena 3",
-            miniatura:"img/fiesta/mini_2.jpg",
-            audio:"audio/fiesta/escena_03.mp3",
+            miniatura:"img/cenicienta/mini_2.jpg",
+            audio:"audio/cenicienta/escena_03.mp3",
             parrafos:
             [
                 {
-                    texto: "Con sus brazos musculosos, super Sergio mueve el gran sillón de la sala.",
-                    tiempo:[0,6.1,0.5] 
+                    texto: "La madrastra buscó los vestidos más hermosos y las joyas más elegantes para que sus hijas fueran al baile",
+                    tiempo:[0,7.2,0.5] 
                 },
                 {
-                    texto: "Enrolla la alfombra usando solamente su dedo índice.",
-                    tiempo:[6.6,11.2,0.6] 
+                    texto: " Al ver que Cenicienta también se preparaba le dijo:",
+                    tiempo:[7.7,11.8,0.5] 
                 },
                 {
-                    texto: "Traslada la mesa y las sillas del comedor al jardín sin ninguna ayuda.",
-                    tiempo:[11.7,17.6,0.9] 
+                    texto: "Lo siento, no puedes ir. No tienes qué ponerte y no puedes ir con ese sucio vestido que llevas puesto.",
+                    tiempo:[12.3,19.6,0.5] 
                 },
                 {
-                    texto: "Aunque, pensándolo mejor – reflexiona Sergio -",
-                    tiempo:[18.5,22.4,0.9] 
-                },
-                {
-                    texto: "quizás sea buena idea dejar esa tarea a los primos y primas mayores…",
-                    tiempo:[23.2,28,0.8]
-                },
-                
+                    texto: "Vuelve a la cocina.",
+                    tiempo:[20.1,21.5,0.5] 
+                }
             ]
         },
         {
             nombre:"Escena 4",
-            miniatura:"img/fiesta/mini_3.jpg",
-            audio:"audio/fiesta/escena_04.mp3",
+            miniatura:"img/cenicienta/mini_3.jpg",
+            audio:"audio/cenicienta/escena_04.mp3",
             parrafos:
             [
                 {
@@ -141,8 +136,8 @@ let JSON_CUENTO = {
         },
         {
             nombre:"Escena 5",
-            miniatura:"img/fiesta/mini_4.jpg",
-            audio:"audio/fiesta/escena_05.mp3",
+            miniatura:"img/cenicienta/mini_4.jpg",
+            audio:"audio/cenicienta/escena_05.mp3",
             parrafos:
             [
                 {
@@ -167,8 +162,8 @@ let JSON_CUENTO = {
         },
         {
             nombre:"Escena 6",
-            miniatura:"img/fiesta/mini_5.jpg",
-            audio:"audio/fiesta/escena_06.mp3",
+            miniatura:"img/cenicienta/mini_5.jpg",
+            audio:"audio/cenicienta/escena_06.mp3",
             parrafos:
             [
                 {
@@ -192,8 +187,8 @@ let JSON_CUENTO = {
         },
         {
             nombre:"Escena 7",
-            miniatura:"img/fiesta/mini_6.jpg",
-            audio:"audio/fiesta/escena_07.mp3",
+            miniatura:"img/cenicienta/mini_6.jpg",
+            audio:"audio/cenicienta/escena_07.mp3",
             parrafos:
             [
                 {
@@ -217,8 +212,8 @@ let JSON_CUENTO = {
         },
         {
             nombre:"Escena 8",
-            miniatura:"img/fiesta/mini_7.jpg",
-            audio:"audio/fiesta/escena_08.mp3",
+            miniatura:"img/cenicienta/mini_7.jpg",
+            audio:"audio/cenicienta/escena_08.mp3",
             parrafos:
             [
                 {
@@ -238,8 +233,8 @@ let JSON_CUENTO = {
         },
         {
             nombre:"Escena 9",
-            miniatura:"img/fiesta/mini_8.jpg",
-            audio:"audio/fiesta/escena_09.mp3",
+            miniatura:"img/cenicienta/mini_8.jpg",
+            audio:"audio/cenicienta/escena_09.mp3",
             parrafos:
             [
                 {
@@ -330,7 +325,7 @@ let ANIM = {
         });
     },
 
-    animaescena_7: () => {
+    /* animaescena_7: () => {
         if (!ANIM.anim_interact_7_feliz) {
             ANIM.anim_interact_7_feliz = new TimelineMax({ repeat: -1 }); // creo la interacción
             ANIM.anim_interact_7_feliz
@@ -340,7 +335,7 @@ let ANIM = {
            .addLabel('final');
        }
         ANIM.anim_interact_7_feliz.resume();
-    },
+    }, */
 
     pauseAnimaciones: () => {
         
@@ -428,8 +423,8 @@ let ANIM = {
             Player.activaBtnSiguiente();
             Player.tooglePlayPauseIco();
             Player.resetSubtitulos();
-            Player.playSoundFX('muebles');
-            Player.cambiaVolume('muebles', 0.8);
+            //Player.playSoundFX('muebles');
+            //Player.cambiaVolume('muebles', 0.8);
         }, "fin_escena_2");
         
        
@@ -644,7 +639,7 @@ let ANIM = {
         ANIM.anim_interact_1_cenicienta = new TimelineMax(); // creo la interacción
         ANIM.anim_interact_1_cenicienta
                 .addLabel('inicio')
-                .to('#escena_01 .cenicienta02',8,{x:800, ease:Power1.easeOut})
+                .to('#escena_01 .cenicienta02',3.7,{x:800, ease:"circ.out"})
                 .fromTo('#escena_01 .cenicienta02', 0.8,{backgroundPosition:'0% 0%'},{backgroundPosition:'-200% 0%', ease: SteppedEase.config(2), repeat:3}, "-=4")
                 .addLabel('final');     
         ANIM.anim_interact_1_cenicienta.pause();
@@ -653,12 +648,12 @@ let ANIM = {
         ANIM.anim_interact_1_paje = new TimelineMax({repeat:2}); // creo la interacción
         ANIM.anim_interact_1_paje
                 .addLabel('inicio')
-                .fromTo('#escena_01 .mensajero', 1,{backgroundPosition:'0% 0%'},{backgroundPosition:'-300% 0%', ease: SteppedEase.config(3)})
+                .fromTo('#escena_01 .mensajero', 1,{backgroundPosition:'0% 0%'},{backgroundPosition:'-300% 0%', ease: SteppedEase.config(3)}, "+=1")
                 .addLabel('final');     
         ANIM.anim_interact_1_paje.pause();
         
         /* Publico */
-        ANIM.anim_interact_1_publico = new TimelineMax({repeat:1}); // creo la interacción
+        ANIM.anim_interact_1_publico = new TimelineMax({repeat:0}); // creo la interacción
         ANIM.anim_interact_1_publico
             .addLabel('inicio')
             .addCallback(function(){
@@ -673,24 +668,36 @@ let ANIM = {
         ANIM.anim_interact_1_publico.pause();
         
         /* Mujeres */
-        ANIM.anim_interact_1_mujeres= new TimelineMax({repeat:1}); // creo la interacción
+        ANIM.anim_interact_1_mujeres= new TimelineMax({repeat:0}); // creo la interacción
         ANIM.anim_interact_1_mujeres
             .addLabel('inicio')
             .addCallback(function(){
                 Player.playSoundFX('suspiro_de_mujer');
-                Player.cambiaVolume('suspiro_de_mujer', 0.6);
+                Player.cambiaVolume('suspiro_de_mujer', 0.2);
             })
             .fromTo('#escena_01 .hermana1', 1,{backgroundPosition:'0% 0%'},{backgroundPosition:'-200% 0%', ease: SteppedEase.config(2)})
-            .fromTo('#escena_01 .madrastra_es01', 1,{backgroundPosition:'0% 0%'},{backgroundPosition:'-200% 0%', ease: SteppedEase.config(2)})
-            .fromTo('#escena_01 .hermana2', 1,{backgroundPosition:'0% 0%'},{backgroundPosition:'-200% 0%', ease: SteppedEase.config(2)})
+            //.fromTo('#escena_01 .madrastra_es01', 1,{backgroundPosition:'0% 0%'},{backgroundPosition:'-200% 0%', ease: SteppedEase.config(2)})
+            .fromTo('#escena_01 .hermana2', 1,{backgroundPosition:'0% 0%'},{backgroundPosition:'-200% 0%', ease: SteppedEase.config(2)}, "+=1")
             .addLabel('final');
         ANIM.anim_interact_1_mujeres.pause();
+
+        /* Madrastra Pensando */
+        ANIM.anim_interact_1_madrastra= new TimelineMax({repeat:0});
+        ANIM.anim_interact_1_madrastra
+            .addLabel('inicio')
+            .addCallback(function(){
+                Player.playSoundFX('madrastra_pensando');
+                Player.cambiaVolume('madrastra_pensando', 0.2);
+            })
+            .fromTo('#escena_01 .madrastra_es01', 1,{backgroundPosition:'0% 0%'},{backgroundPosition:'-200% 0%', ease: SteppedEase.config(2)}, "+=1")
+            .addLabel('final');
+        ANIM.anim_interact_1_madrastra.pause();
         
         /* Nubes*/
         ANIM.anim_interact_1_nubes= new TimelineMax({repeat:1, yoyo:true}); // creo la interacción
         /* Comente solo nubes pq no aparecia la animación del sool */
         ANIM.anim_interact_1_nubes
-            .addLabel('inicio')          
+            .addLabel('inicio')     
             .fromTo('#escena_01 .solAlternativo', 5,{backgroundPosition:'0% 0%'},{backgroundPosition:'-200% 0%', ease: SteppedEase.config(2), repeat:-1},0)
             .fromTo('#escena_01 .nube1', 40,
                     {backgroundPosition:'0% 0%'},
@@ -705,32 +712,15 @@ let ANIM = {
 
 
 
-        /* ANIM.ANIM.anim_interact_sol= new TimelineMax({repeat:1}); // creo la interacción
-        ANIM.ANIM.anim_interact_sol
-            .addLabel('inicio')
-            .fromTo('#escena_01 .sol2', 5,
-                    {backgroundPosition:'0% 0%'},
-                    {backgroundPosition:'-200% 0%',}
-                   )
-             .fromTo('#escena_01 .nube2', 32,
-                   {backgroundPosition:'0% 0%'},
-                   {backgroundPosition:'-200% 0%', x:-950},0
-                  ) 
-            .addLabel('final');
-        ANIM.ANIM.anim_interact_sol.pause(); //ANIM.anim_interact_sol */
+        /***************************************************************************************/
         
         //Escena02
-         ANIM.anim_interact_2_ratonHeroe = new TimelineMax({repeat:2}); // creo la interacción
-         ANIM.anim_interact_2_ratonHeroe
-          
+         ANIM.anim_interact_mujeres2 = new TimelineMax({repeat:2}); // creo la interacción
+         ANIM.anim_interact_mujeres2
             .addLabel('inicio')
-            .addCallback(function(){
-                Player.playSoundFX('capa_heroe');//luego cambia el volumen a la mitad
-                Player.cambiaVolume('capa_heroe',0.5);
-            })
-             .fromTo('#escena_02 .ratonHeroe', 2,{backgroundPosition:'0% 0%'},{backgroundPosition:'-600% 0%', ease: SteppedEase.config(6)})
-             .addLabel('final');
-         ANIM.anim_interact_2_ratonHeroe.pause();
+            .fromTo('#escena_02 .hermanaEs01', 2,{backgroundPosition:'0% 0%'},{backgroundPosition:'-200% 0%', ease: SteppedEase.config(2)})
+            .addLabel('final');
+         ANIM.anim_interact_mujeres2.pause();
          
         
            //Animacion Cocinero
@@ -865,7 +855,10 @@ let ANIM = {
             ANIM.anim_interact_1_paje,
             ANIM.anim_interact_1_publico,
             ANIM.anim_interact_1_mujeres,
+            ANIM.anim_interact_1_madrastra,
             ANIM.anim_interact_nubes,
+
+            ANIM.anim_interact_mujeres2,
             
 
 
@@ -999,6 +992,14 @@ let ANIM = {
                  if(btn.hasClass('primario')){
                     btn.click(function(){
                         $(this).css({"display":"none"});
+                        ANIM.anim_interact_1_madrastra.eventCallback("onComplete", muestralo, [$(this), cb]);   
+                        ANIM.anim_interact_1_madrastra.play(0);
+                    });
+                 }
+
+                 if(btn.hasClass('primario')){
+                    btn.click(function(){
+                        $(this).css({"display":"none"});
                         ANIM.anim_interact_1_nubes.eventCallback("onComplete", muestralo, [$(this), cb]);   
                         ANIM.anim_interact_1_nubes.play(0);  
                     });
@@ -1006,14 +1007,13 @@ let ANIM = {
 
                 break;
             case 2:
-               /*  if(btn.hasClass('primario')){
+                 if(btn.hasClass('primario')){
                     btn.click(function(){
                         $(this).css({"display":"none"});
-                        ANIM.anim_interact_1_paje.eventCallback("onComplete", muestralo, [$(this), cb]);   
-                        ANIM.anim_interact_1_paje.play(0);
-                        
+                        ANIM.anim_interact_mujeres2.eventCallback("onComplete", muestralo, [$(this), cb]);   
+                        ANIM.anim_interact_mujeres2.play(0);
                     });
-                 } */
+                 } 
                  
                  break;
              case 3:
