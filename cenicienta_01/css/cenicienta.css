@@ -15,7 +15,7 @@
     text-overflow: ellipsis;
     overflow: hidden;
 }
-/* Escena00 */
+
 #escena_00 .fondo{ 
     background-image: url("../img/cenicienta/esc_0_fondo.jpg");
 /*    background-image: url("../img/FOLDER/testpos0.jpg");*/
@@ -170,7 +170,7 @@
 /*    background-color: black;*/
     background-repeat: no-repeat;
 }
-/* Escena01 */
+
 #escena_01 .mensajero{
     width: 305px;
     height: 650px;
@@ -455,8 +455,6 @@
     background-repeat: no-repeat;
 }
 
-/* Escena02 */
-
 
 #escena_02 .hermanaEs02 {
     width: 545px;
@@ -477,15 +475,16 @@
 }
 
 #escena_02 .madrastraEs02 {
-    width: 490px;
-    height: 1000px;
+    width: 453px;
+    height: 500px;
     position: absolute;
     z-index: 11;
-    top: 53%;
-    left: 11.5%;
+    top: 57%;
+    left: 12.5%;
     background-position: -200% 0%;
     background-size: 200%;
     background-repeat: repeat-x;
+    display:none;
 }
 
 .spriteMadrastra_es02 { 
@@ -533,27 +532,258 @@
     background-repeat: no-repeat;
 }
 
-/* Img */                                              
-/* #escena_03 .fondo #cocinero_raton{
+#escena_02 .madrastraEnojadaEs02 {
+    width: 460px;
+    height: 470px;
+    position: absolute;
+    z-index: 20;
+    top: 59%;
+    left: 12.5%;
+    background-position: -100% 0%;
+    background-size: 100%;
+    background-repeat: repeat-x;
+}
+
+.spriteMadrastraEnojada_es02 { 
+    background-image: url("../img/cenicienta/sprite/escena03/madrastra2.png");
+    background-repeat: no-repeat;
+}
+
+#escena_02 .manoEs02{
+    width: 65px;
+    height: 150px;
+    position: absolute;
+    z-index: 15;
+    top: 62.8%;
+    left: 33.89%;
+    background-position: -100% 0%;
+    background-size: 100%;
+    background-repeat: repeat-x;
+}
+
+.spriteMano_es02 { 
+    background-image: url("../img/cenicienta/sprite/escena03/mano.png");
+/*    background-color: rgba(0,0,0,1);*/
+/*    background-color: black;*/
+    background-repeat: no-repeat;
+}
+
+
+
+
+                                                  
+#escena_03 .fondo #cocinero_raton{
     width: 26%;
     position: absolute;
     z-index: 6;
     top: 60%;
     left: 52%;
     pointer-events: none;
-} */
+}
 
-/* Escena03 */
+#escena_04 .wafle {
+    width: 400px;
+    height: 500px;
+    position: absolute;
+    z-index: 4;
+    top: 57%;
+    left: 75%;
+    background-position: -200% 0%;
+    background-size: 200%;
+    background-repeat: repeat-x;
+}
+.spriteWa{ 
+    background-image: url("../img/fiesta/sprite/comiendo_escena_05.png");
+/*    background-color: rgba(0,0,0,1);*/
+/*    background-color: black;*/
+    background-repeat: no-repeat;
+}
 
-/* Escena04 */
+#escena_05 .estrellas{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 6;
+    top: -22px;
+    left: 0px;
+    background-position: -400% 0%;
+    background-size: 400%;
+    background-repeat: repeat-x;
+}
 
-/* Escena05 */
+.spriteEs{ 
+    background-image: url("../img/fiesta/sprite/estrellas_escena_06.png");
+/*    background-color: rgba(0,0,0,1);*/
+/*    background-color: black;*/
+    background-repeat: no-repeat;
+}
 
-/* Escena06 */
+#escena_06 .ojos{
+    width: 400px;
+    height: 600px;
+    position: absolute;
+    z-index: 6;
+    top: 49%;
+    left: 37%;
+    background-position: -300% 0%;
+    background-size: 300%;
+    background-repeat: repeat-x;
+}
 
-/* Escena07 */
+.spriteOj{ 
+    background-image: url("../img/fiesta/sprite/dudoso_escena_07.png");
+/*    background-color: rgba(0,0,0,1);*/
+/*    background-color: black;*/
+    background-repeat: no-repeat;
+}
 
-/* Escena08 */
+
+
+#escena_07 .feliz{
+    width: 1000px;
+    height: 1000px;
+    position: absolute;
+    z-index: 4;
+    top: 7%;
+    left: 30%;
+    background-position: -1700% 0%;
+    background-size: 1700%;
+    background-repeat: repeat-x;
+
+}
+
+.spriteFe{ 
+    background-image: url("../img/fiesta/sprite/feliz_02_escena_08.png");
+/*    background-color: rgba(0,0,0,1);*/
+/*    background-color: black;*/
+    background-repeat: no-repeat;
+}
+
+#escena_07 .perro{
+    width: 500px;
+    height: 500px;
+    position: absolute;
+    z-index: 4;
+    top: 53%;
+    left: 8%;
+    background-position: -1700% 0%;
+    background-size: 1700%;
+    background-repeat: repeat-x;
+}
+
+.spritePe{ 
+    background-image: url("../img/fiesta/sprite/musico_01_escena_08.png");
+/*    background-color: rgba(0,0,0,1);*/
+/*    background-color: black;*/
+    background-repeat: no-repeat;
+}
+
+#escena_08 .sergio {
+    width: 450px;
+    height: 550px;
+    position: absolute;
+    z-index: 6;
+    top: 17%;
+    left: 38%;
+    background-position: -200% 0%;
+    background-size: 200%;
+    background-repeat: repeat-x;
+}
+.spriteSr{ 
+    background-image: url("../img/fiesta/sprite/dance_06_escena_09.png");
+/*    background-color: rgba(0,0,0,1);*/
+/*    background-color: black;*/
+    background-repeat: no-repeat;
+}
+
+#escena_08 .dance01 {
+    width: 17%;
+    height: 46%;
+    position: absolute;
+    z-index: 6;
+    top: 47%;
+    left: 58%;
+    background-position: -200% 0%;
+    background-size: 200%;
+    background-repeat: repeat-x;
+}
+.spriteD01{ 
+    background-image: url("../img/fiesta/sprite/dance_01_escena_09.png");
+/*    background-color: rgba(0,0,0,1);*/
+/*    background-color: black;*/
+    background-repeat: no-repeat;
+}
+
+#escena_08 .dance02 {
+    width: 16%;
+    height: 45%;
+    position: absolute;
+    z-index: 7;
+    top: 46%;
+    left: 50%;
+    background-position: -200% 0%;
+    background-size: 200%;
+    background-repeat: repeat-x;
+}
+.spriteD02{ 
+    background-image: url("../img/fiesta/sprite/dance_02_escena_09.png");
+/*    background-color: rgba(0,0,0,1);*/
+/*    background-color: black;*/
+    background-repeat: no-repeat;
+}
+#escena_08 .dance03 {
+    width: 17%;
+    height: 41%;
+    position: absolute;
+    z-index: 7;
+    top: 47%;
+    left: 38%;
+    background-position: -200% 0%;
+    background-size: 200%;
+    background-repeat: repeat-x;
+}
+.spriteD03{ 
+    background-image: url("../img/fiesta/sprite/dance_03_escena_09.png");
+/*    background-color: rgba(0,0,0,1);*/
+/*    background-color: black;*/
+    background-repeat: no-repeat;
+}
+#escena_08 .dance04 {
+    width: 14%;
+    height: 38%;
+    position: absolute;
+    z-index: 6;
+    top: 54%;
+    left: 31%;
+    background-position: -200% 0%;
+    background-size: 200%;
+    background-repeat: repeat-x;
+}
+.spriteD04{ 
+    background-image: url("../img/fiesta/sprite/dance_04_escena_09.png");
+/*    background-color: rgba(0,0,0,1);*/
+/*    background-color: black;*/
+    background-repeat: no-repeat;
+}
+#escena_08 .dance05 {
+    width: 12%;
+    height: 36%;
+    position: absolute;
+    z-index: 5;
+    top: 53%;
+    left: 67%;
+    background-position: -200% 0%;
+    background-size: 200%;
+    background-repeat: repeat-x;
+}
+.spriteD05{ 
+    background-image: url("../img/fiesta/sprite/dance_05_escena_09.png");
+/*    background-color: rgba(0,0,0,1);*/
+/*    background-color: black;*/
+    background-repeat: no-repeat;
+}
+
+
 
 #escena_01 .fondo{ 
     background-image: url("../img/cenicienta/esc_1_fondo.jpg");
@@ -605,3 +835,14 @@
 #escena_06 .btn_interact{ top: 473px; left: 689px;}
 #escena_07 .btn_interact{ top: 47%; left: 62%;}
 #escena_08 .btn_interact { top: 450px; left: 960px;}
+
+
+
+
+
+
+
+
+
+
+

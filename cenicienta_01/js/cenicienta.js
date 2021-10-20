@@ -113,21 +113,21 @@ let JSON_CUENTO = {
             parrafos:
             [
                 {
-                    texto: "Cenicienta lloraba amargamente por no poder ir al baile.",
-                    tiempo:[0,4.2,0.5] 
+                    texto: "Sartén en mano, el chef Sergio rescata el panqueque de su impecable vuelta por los aires,<br>al tiempo que revuelve vigorosamente la salsa de chocolate.",
+                    tiempo:[0,10.7,0.5] 
                 },
                 {
-                    texto: "De pronto apareció un hada que convirtió con su varita mágica sus cenicientos vestidos en un elegante traje,<br>y una calabaza del jardín en un carruaje con caballos y cochero.",
-                    tiempo:[4.7,17.0,0.5] 
+                    texto: "Los ayudantes de cocina siguen sus rápidas instrucciones:",
+                    tiempo:[11.1,15.4,0.4] 
                 },
                 {
-                    texto: "Cenicienta, soy tu hada madrina.",
-                    tiempo:[17.5,20.2,0.5] 
+                    texto: "¡amasar, cortar, hornear!<br>¡Atención, que se queman las galletas!",
+                    tiempo:[15.7,21.2,0.6] 
                 },
                 
                 {
-                    texto: "Recuerda que el encantamiento durará solo hasta las doce de la noche.",
-                    tiempo:[20.7,28,0.5]  
+                    texto: "De pronto, Sergio recuerda que sus primos Santiago y Laura tienen tantas ganas de cocinar…",
+                    tiempo:[21.7,29,0.6] 
                 },
                 
                 
@@ -337,11 +337,22 @@ let ANIM = {
         ANIM.anim_interact_7_feliz.resume();
     }, */
 
+    //Intento de desaparecer la madrastra ES02
+    /* animaescena_2: () => {
+        
+        ANIM.anim_interact_2_madrastraEnojada = new TimelineMax(); // creo la interacción
+        ANIM.anim_interact_2_madrastraEnojada
+            .addLabel('inicio')
+            .to('#escena_02 .madrastraEnojadaEs02', 1, {autoAlpha:1})
+            .addLabel('final');
+        ANIM.anim_interact_2_madrastraEnojada.resume();
+    },
+    */
     pauseAnimaciones: () => {
         
-        try { ANIM.anim_interact_7_feliz.pause(0) }
+        try { ANIM.anim_interact_2_madrastraEnojada.pause(0) }
         catch (err) { }
-    },
+    }, 
 
 
     init: () => {
@@ -715,16 +726,56 @@ let ANIM = {
         /***************************************************************************************/
         
         //Escena02
-         ANIM.anim_interact_mujeres2 = new TimelineMax({repeat:2}); // creo la interacción
-         ANIM.anim_interact_mujeres2
+        /* Grupo de Mujeres */
+        ANIM.anim_interact_2_mujeres3 = new TimelineMax();
+        ANIM.anim_interact_2_mujeres3
             .addLabel('inicio')
-            .fromTo('#escena_02 .hermana2Es02', 2,{backgroundPosition:'0% 0%'},{backgroundPosition:'-200% 0%', ease: SteppedEase.config(2)})
-            .fromTo('#escena_02 .hermanaEs02', 2,{backgroundPosition:'0% 0%'},{backgroundPosition:'-200% 0%', ease: SteppedEase.config(2)})
-            .fromTo('#escena_02 .madrastraEs02', 2,{backgroundPosition:'0% 0%'},{backgroundPosition:'-200% 0%', ease: SteppedEase.config(2)})
+            .addCallback(function(){
+                Player.playSoundFX('risa_malvada');
+                Player.cambiaVolume('risa_malvada', 0.2);
+            })
+            .fromTo('#escena_02 .hermana2Es02', 0.8,{backgroundPosition:'0% 0%'},{backgroundPosition:'-200% 0%', ease: SteppedEase.config(2), repeat:2})
+            .fromTo('#escena_02 .hermanaEs02', 0.8,{backgroundPosition:'0% 0%'},{backgroundPosition:'-200% 0%', ease: SteppedEase.config(2), repeat:2})
+            //.fromTo('#escena_02 .madrastraEs02', 0.8,{backgroundPosition:'0% 0%'},{backgroundPosition:'-200% 0%', ease: SteppedEase.config(2), repeat:3})
+            //para esconder a la madrastra
+            //.to('#escena_02 .madrastraEs02', 1, {autoAlpha:0})
+            //.fromTo('#escena_02 .madrastraEs02', 0.8,{backgroundPosition:'0% 0%'},{backgroundPosition:'-200% 0%', ease: SteppedEase.config(2)})
             .addLabel('final');
-         ANIM.anim_interact_mujeres2.pause();
-         
+        ANIM.anim_interact_2_mujeres3.pause();
         
+        /* Madrastra Enojada */
+        ANIM.anim_interact_2_madrastraEnojada = new TimelineMax();
+        ANIM.anim_interact_2_madrastraEnojada
+           .addLabel('inicio')
+           .addCallback(function(){
+               Player.playSoundFX('no_de_madrastra');
+               Player.cambiaVolume('no_de_madrastra', 0.2);
+           })
+           //ME QUEDE EN ROTAR LA MANO!!!!
+           .fromTo('#escena_02 .manoEs02', 0.8, {rotation:0}, {rotation:15, ease:Power4.easeOut})
+           .fromTo('#escena_02 .manoEs02', 0.8, {rotation:0}, {rotation:-2, ease:Power4.easeOut})
+           //.from('#escena_02 .madrastraEnojadaEs02', 15,{backgroundPosition:'0% 0%'},{backgroundPosition:'-100% 0%', ease: SteppedEase.config(1)})
+           //.fromTo('#escena_02 .hermanaEs02', 0.8,{backgroundPosition:'0% 0%'},{backgroundPosition:'-200% 0%', ease: SteppedEase.config(2), repeat:2})
+           //.fromTo('#escena_02 .madrastraEs02', 0.8,{backgroundPosition:'0% 0%'},{backgroundPosition:'-200% 0%', ease: SteppedEase.config(2), repeat:3})
+           //para esconder a la madrastra
+           //.to('#escena_02 .madrastraEs02', 1, {autoAlpha:0})
+           //.fromTo('#escena_02 .madrastraEs02', 0.8,{backgroundPosition:'0% 0%'},{backgroundPosition:'-200% 0%', ease: SteppedEase.config(2)})
+           .addLabel('final');
+        ANIM.anim_interact_2_madrastraEnojada.pause();
+
+        ANIM.anim_interact_2_cenicienta = new TimelineMax();
+        ANIM.anim_interact_2_cenicienta
+                .addLabel('inicio')
+                .fromTo('#escena_02 .cenicientaEs02', 4,{backgroundPosition:'0% 0%'},{backgroundPosition:'-200% 0%', ease: SteppedEase.config(2), repeat:0}, "+=1")
+                .addLabel('final');     
+        ANIM.anim_interact_2_cenicienta.pause();
+        
+
+
+
+
+
+
            //Animacion Cocinero
            ANIM.anim_interact_3_cocinero = new TimelineMax({repeat:2}); // creo la interacción
            ANIM.anim_interact_3_cocinero
@@ -858,9 +909,12 @@ let ANIM = {
             ANIM.anim_interact_1_publico,
             ANIM.anim_interact_1_mujeres,
             ANIM.anim_interact_1_madrastra,
-            ANIM.anim_interact_nubes,
+            ANIM.anim_interact_1_nubes,
 
-            ANIM.anim_interact_mujeres2,
+
+            ANIM.anim_interact_2_mujeres3,
+            ANIM.anim_interact_2_madrastraEnojada,
+            ANIM.anim_interact_2_cenicienta,
             
 
 
@@ -1012,8 +1066,23 @@ let ANIM = {
                  if(btn.hasClass('primario')){
                     btn.click(function(){
                         $(this).css({"display":"none"});
-                        ANIM.anim_interact_mujeres2.eventCallback("onComplete", muestralo, [$(this), cb]);   
-                        ANIM.anim_interact_mujeres2.play(0);
+                        ANIM.anim_interact_2_mujeres3.eventCallback("onComplete", muestralo, [$(this), cb]);   
+                        ANIM.anim_interact_2_mujeres3.play(0);
+                    });
+                 }
+                  
+                 if(btn.hasClass('primario')){
+                    btn.click(function(){
+                        $(this).css({"display":"none"});
+                        ANIM.anim_interact_2_madrastraEnojada.eventCallback("onComplete", muestralo, [$(this), cb]);   
+                        ANIM.anim_interact_2_madrastraEnojada.play(0);
+                    });
+                 }
+                 if(btn.hasClass('primario')){
+                    btn.click(function(){
+                        $(this).css({"display":"none"});
+                        ANIM.anim_interact_2_cenicienta.eventCallback("onComplete", muestralo, [$(this), cb]);   
+                        ANIM.anim_interact_2_cenicienta.play(0);
                     });
                  } 
                  
