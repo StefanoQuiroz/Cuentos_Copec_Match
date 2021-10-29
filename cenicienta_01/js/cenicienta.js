@@ -201,11 +201,11 @@ let JSON_CUENTO = {
                 {
                     texto: "Las hermanastras intentaron que la zapatilla les calzara por todos los medios,<br> pero sus pies eran demasiado grandes y gruesos.",
                     tiempo:[12.0,21.0,0.5] 
-                },
-                {
+                }
+               /*  ,{
                     texto: "Prueba Borrar",
                     tiempo:[21.0,21.2,0.2] 
-                }
+                } */
             ]
         },
         {
@@ -215,18 +215,17 @@ let JSON_CUENTO = {
             parrafos:
             [
                 {
-                    texto: "¡Con ustedes nuestro invitado especial, el gran cantante Sergio!<br>- anuncia la abuela y todos aplauden.",
-                    tiempo:[0,10.0,0.7] 
+                    texto: "Al llegar el turno de Cenicienta, las hermanastras se burlaron cruelmente:<br> Esa zapatilla jamás calzaría a una sirvienta.",
+                    tiempo:[0,8.8,0.09] 
                 },
                 {
-                    texto: "Sergio canta a todo pulmón y llena el espacio de cada<br>rincón de la casa con su micrófono inalámbrico.",
-                    tiempo:[10.6,20.0,0.7] 
-                },
-                {
-                    texto: "Las horas pasan volando para todos entre los coros de una<br>canción, un villancico, un cumpleaños feliz, y otras de su repertorio.",
-                    tiempo:[20.6,31.8,0.5] 
-                },
-                
+                    texto: "Pero para su sorpresa, el zapato calzó perfectamente en el fino pie de la joven.",
+                    tiempo:[8.8,16.1,0.5] 
+                }
+               /*  ,{
+                    texto: "Prueba Borrar",
+                    tiempo:[16.4,16.5,0.3] 
+                } */
             ]
         },
         {
@@ -236,26 +235,21 @@ let JSON_CUENTO = {
             parrafos:
             [
                 {
-                    texto: "A las ocho en punto, la casa está lista, adornada de colores<br>y aromas que escapan desde la cocina.",
-                    tiempo:[0,7.4,0.7] 
+                    texto: "El príncipe miró a Cenicienta a los ojos y la reconoció de inmediato.",
+                    tiempo:[0,5.0,8.9] 
                 },
                 {
-                    texto: "La abuela agradece a cada uno a uno de los nietos por su trabajo.",
-                    tiempo:[8.0,12.35,0.5] 
+                    texto: " La boda se celebró al día siguiente en el palacio real y con grandes festejos.",
+                    tiempo:[5.5,11.1,0.5] 
                 },
                 {
-                    texto: "Cuando le toca el turno a Sergio…<br>los aplausos son tan fuertes y grandes como su sonrisa.",
-                    tiempo:[12.8,19.6,0.5] 
-                },
-                {
-                    texto: "Entonces asoma la cabeza del Tata,<br>elegantísimo vestido con su mejor traje.",
-                    tiempo:[20.0,26.5,0.5] 
-                },
-                {
-                    texto: "¿Me perdí algo?",
-                    tiempo:[27.0,28.5,0.3] 
-                },
-                
+                    texto: "Y colorín, colorado, éste cuento se ha acabado.",
+                    tiempo:[11.6,15.8,0.5] 
+                } 
+                /* ,{
+                    texto: "Prueba Borrar",
+                    tiempo:[16.0,16.2,0.2] 
+                } */
             ]
         },
            
@@ -394,6 +388,16 @@ let ANIM = {
         ANIM.main_tl.addCallback(function () {
             ANIM.fadeVolume('campanadas_media_noche',1,0,2);
         }, "5_0_audio_fade");
+
+        /* Efecto de sonido de la escena08 antes de la narracion */
+        ANIM.main_tl.addLabel('8_0_audio', 'escena_8+=0.1');
+        ANIM.main_tl.addLabel('8_0_audio_fade', '8_0-=2');
+        ANIM.main_tl.addCallback(function () {
+            Player.playSoundFX('musica_de_cuento');
+        }, '8_0_audio');
+        ANIM.main_tl.addCallback(function () {
+            ANIM.fadeVolume('musica_de_cuento',1,0,2);
+        }, "8_0_audio_fade");
         
 
 
@@ -477,8 +481,6 @@ let ANIM = {
             Player.activaBtnSiguiente();
             Player.tooglePlayPauseIco();
             Player.resetSubtitulos();
-            //Player.playSoundFX('cancion_baile');
-            //Player.cambiaVolume('cancion_baile',0.6);
             console.log("fin_escena 4");
         }, "fin_escena_4");
         
@@ -492,10 +494,8 @@ let ANIM = {
             ANIM.main_tl.pause();
             ANIM.interactividad(5);
             Player.activaBtnSiguiente();
-        /*  Player.tooglePlayPauseIco();*/
+            Player.tooglePlayPauseIco();//se descomento
             Player.resetSubtitulos();
-            Player.playSoundFX('organi');
-            Player.cambiaVolume('organi',0.2);
             console.log("fin_escena 5");
         }, "fin_escena_5");
         
@@ -509,10 +509,8 @@ let ANIM = {
             ANIM.main_tl.pause();
             ANIM.interactividad(6);
             Player.activaBtnSiguiente();
-            /*Player.tooglePlayPauseIco();*/
+            Player.tooglePlayPauseIco();// se descomento
             Player.resetSubtitulos();
-            Player.playSoundFX('navidad');
-            Player.cambiaVolume('navidad',0.2);
         }, "fin_escena_6");
         
         /*LLAMADAS Y FUNCIONES ESCENA 7*/ //<-----------------------------------------------------
@@ -526,10 +524,6 @@ let ANIM = {
             Player.activaBtnSiguiente();
             Player.tooglePlayPauseIco();
             Player.resetSubtitulos();
-            Player.playSoundFX('navidad');
-            Player.cambiaVolume('navidad',0.2);
-            Player.playSoundFX('peatones');
-            Player.cambiaVolume('peatones',0.2);
         }, "fin_escena_7");
         
         /*LLAMADAS Y FUNCIONES ESCENA 8*/ //<-----------------------------------------------------
@@ -543,10 +537,6 @@ let ANIM = {
             Player.activaBtnSiguiente();
             Player.tooglePlayPauseIco();
             Player.resetSubtitulos();
-            Player.playSoundFX('villancico');
-            Player.cambiaVolume('villancico', 0.2);
-            Player.playSoundFX('celebracion', true);
-            Player.cambiaVolume('celebracion',0.5);
         }, "fin_escena_8");
         
     
@@ -671,7 +661,7 @@ let ANIM = {
         ANIM.anim_interact_1_paje.pause();
         
         /* Publico */
-        ANIM.anim_interact_1_publico = new TimelineMax({repeat:0}); // creo la interacción
+        ANIM.anim_interact_1_publico = new TimelineMax({repeat:2}); // creo la interacción
         ANIM.anim_interact_1_publico
             .addLabel('inicio')
             .addCallback(function(){
@@ -686,7 +676,7 @@ let ANIM = {
         ANIM.anim_interact_1_publico.pause();
         
         /* Mujeres */
-        ANIM.anim_interact_1_mujeres= new TimelineMax({repeat:0}); // creo la interacción
+        ANIM.anim_interact_1_mujeres= new TimelineMax({repeat:2}); // creo la interacción
         ANIM.anim_interact_1_mujeres
             .addLabel('inicio')
             .addCallback(function(){
@@ -700,7 +690,7 @@ let ANIM = {
         ANIM.anim_interact_1_mujeres.pause();
 
         /* Madrastra Pensando */
-        ANIM.anim_interact_1_madrastra= new TimelineMax({repeat:0});
+        ANIM.anim_interact_1_madrastra= new TimelineMax({repeat:2});
         ANIM.anim_interact_1_madrastra
             .addLabel('inicio')
             .addCallback(function(){
@@ -717,11 +707,11 @@ let ANIM = {
         ANIM.anim_interact_1_nubes
             .addLabel('inicio')     
             .fromTo('#escena_01 .solAlternativo', 5,{backgroundPosition:'0% 0%'},{backgroundPosition:'-200% 0%', ease: SteppedEase.config(2), repeat:-1},0)
-            .fromTo('#escena_01 .nube1', 40,
+            .fromTo('#escena_01 .nube1', 50,
                     {backgroundPosition:'0% 0%'},
                     {backgroundPosition:'-200% 0%', x:950},0
                    )
-            .fromTo('#escena_01 .nube2', 40,
+            .fromTo('#escena_01 .nube2', 50,
                    {backgroundPosition:'0% 0%'},
                    {backgroundPosition:'-200% 0%', x:-950},0
                   ) 
@@ -793,6 +783,45 @@ let ANIM = {
         /***************************************************************************************/
 
         //Escena03
+        
+        ANIM.anim_interact_3_nubes = new TimelineMax({repeat:-1, yoyo:true});
+        ANIM.anim_interact_3_nubes 
+                .addLabel('inicio')     
+                .fromTo('#escena_03 .nube103', 35,
+                    {backgroundPosition:'0% 0%'},
+                    {backgroundPosition:'-100% 0%', x:350},0
+                    )
+                .fromTo('#escena_03 .nube203', 35,
+                    {backgroundPosition:'0% 0%'},
+                    {backgroundPosition:'-100% 0%', x:-350},0
+                    ) 
+                .fromTo('#escena_03 .nube303', 35,
+                    {backgroundPosition:'0% 0%'},
+                    {backgroundPosition:'-100% 0%', x:350},0
+                    ) 
+                   
+                .addLabel('final');
+        ANIM.anim_interact_3_nubes.pause(); 
+
+        ANIM.anim_interact_3_hada = new TimelineMax({repeat:0});
+        ANIM.anim_interact_3_hada
+                .addLabel('inicio')
+                //Forma usando 3 sprites(falta mejorar):
+                //.fromTo('#escena_03 .brazoAdaVarita', 1,{backgroundPosition:'0% 0%'},{backgroundPosition:'-300% 0%', ease: SteppedEase.config(3)},0)
+                //Forma usando 1 sprite
+                .fromTo('#escena_03 .brazoAdaVarita', 1, {rotation:30}, {rotation:-25})   
+                .fromTo('#escena_03 .brazoAdaVarita', 1, {rotation:30}, {rotation:35},0.5)                
+                .addLabel('final');     
+        ANIM.anim_interact_3_hada.pause();
+
+
+        ANIM.anim_interact_3_transform = new TimelineMax({repeat:3});
+        ANIM.anim_interact_3_transform
+                .addLabel('inicio')
+                .fromTo('#escena_03 .raton1', 2,{backgroundPosition:'0% 0%'},{backgroundPosition:'-200% 0%', ease: SteppedEase.config(2)})
+                .fromTo('#escena_03 .raton2', 2,{backgroundPosition:'0% 0%'},{backgroundPosition:'-200% 0%', ease: SteppedEase.config(2)},0.5)
+                .addLabel('final');     
+        ANIM.anim_interact_3_transform.pause();
 
 
 
@@ -922,33 +951,177 @@ let ANIM = {
                 .addLabel('final');
             ANIM.anim_interact_5_principes.pause();
 
+            /* Animacion de madrastra y cenicienta Nota: Ajustar ese retraso al inicio tiempos */
             ANIM.anim_interact_6_madrastra= new TimelineMax(); // creo la interacción
             ANIM.anim_interact_6_madrastra
                 .addLabel('inicio')
                 //Abimacion madrastra
-                .fromTo('#escena_06 .madrastra06', 1,{backgroundPosition:'0% 0%'},{backgroundPosition:'-200% 0%', ease: SteppedEase.config(2), repeat: 6})
+                .fromTo('#escena_06 .madrastra06', 3,{backgroundPosition:'0% 0%'},{backgroundPosition:'-200% 0%', ease: SteppedEase.config(2), repeat:4}, "-=22")
+                .fromTo('#escena_06 .cenicienta06', 7,{backgroundPosition:'0% 0%'},{backgroundPosition:'-200% 0%', ease: SteppedEase.config(2), repeat:1}, "-=20")
                 .addLabel('final');
             ANIM.anim_interact_6_madrastra.pause();
 
-            ANIM.anim_interact_6_hermanastraVerde= new TimelineMax(); // creo la interacción
-            ANIM.anim_interact_6_hermanastraVerde
+            /* Animacion Hermanastras y Príncipe Nota: Ajustar ese retraso al inicio tiempos */
+            ANIM.anim_interact_6_hermanastras= new TimelineMax(); // creo la interacción
+            ANIM.anim_interact_6_hermanastras
                 .addLabel('inicio')
-                //Abimacion madrastra
-                .fromTo('#escena_06 .hermana206', 10,{backgroundPosition:'200% 0%'},{backgroundPosition:'0% 0%', ease: SteppedEase.config(2)})
-                .fromTo('#escena_06 .principe06', 4,{backgroundPosition:'0% 0%'},{backgroundPosition:'-200% 0%', ease: SteppedEase.config(2)}, "-=8")
-                //deaparecer la ultima escena y luevo volverlo aparecer en segundos
-                //.to('#escena_06 .hermana206', 0.1, {autoAlpha:0}, "-=3.5")
+                //Animacion hermanastra - animación tiempos ok
+                .fromTo('#escena_06 .hermana206', 9,{backgroundPosition:'200% 0%'},{backgroundPosition:'0% 0%', ease: SteppedEase.config(2)}, "-=10")
+                //sonido fx hermanastra206, 1 segundo y tiempos ok
+                .addCallback(function(){
+                    Player.playSoundFX('zapato_apretado');
+                    Player.cambiaVolume('zapato_apretado', 1);
+                }, "-=6.8")
+                //animación principe y tiempos ok
+                .fromTo('#escena_06 .principe06',7.9,{backgroundPosition:'0% 0%'},{backgroundPosition:'-200% 0%', ease: SteppedEase.config(2)}, "-=8.4")
+                //Mover la hermanastra de color verde
+                //Sugerencia de Joaco
+                .to('#escena_06 .hermana206', 0.0001, {x:-345}, "-=3")
+                .to('#escena_06 .hermana106', 0.0001, {x:550}, "-=3")
+                
+                //desaparecer hermanastra en milisegundos
+                //.to('#escena_06 .hermana206', 0.1, {autoAlpha:0}, "-=4")
+                //Comentado ++++++
+                //.to('#escena_06 .hermana106', 0.1, {autoAlpha:0}, "-=4")
+                
+                //.to('#escena_06 .hermana206', 0.0001, {x:-290}, "-=3.8")
+                //Comentado ++++++
+                //.to('#escena_06 .hermana106', 0.0001, {x:550}, "-=3.8")
+                
+                //.to('#escena_06 .hermana206', 0.1, {autoAlpha:1}, "-=3")
+                //Comentado ++++++
+                //.to('#escena_06 .hermana106', 1, {autoAlpha:1}, "-=3.1")
+                
+                //Sprint hermanastra106 OK
+                .fromTo('#escena_06 .hermana106', 9, {backgroundPosition:'0% 0%'},{backgroundPosition:'-300% 0%', ease: SteppedEase.config(3)}, "-=3.1")
+                //Probar sonidos Fx OK
+                .addCallback(function(){
+                    Player.playSoundFX('zapato_apretado');
+                    Player.cambiaVolume('zapato_apretado', 1);
+                }, "-=5")
+                //Animacion 2 Príncipe con hermanastra106
+                .fromTo('#escena_06 .principe06',7.9,{backgroundPosition:'0% 0%'},{backgroundPosition:'-200% 0%', ease: SteppedEase.config(2)}, "-=7")
+                //Cambio a posiciones actuales-Primeras
+                .to('#escena_06 .hermana206', 0.0001, {x:0}, "-=2")
+                .to('#escena_06 .hermana106', 0.0001, {x:0}, "-=2")
+
+                //.fromTo('#escena_06 .hermana106', 9,{backgroundPosition:'200% 0%'},{backgroundPosition:'-300% 0%', ease: SteppedEase.config(2)},)
+
+                //PARO AQUI SINO ME VUELVO LOCO
+                //ahora toca mover la hermanastra morado a la hermanastra verde
+                //La primera imagen de ese sprint lo desaparecemos
+                //Lo movemos
+                //Lo aparecemos en la segunda imagen hasta la tercera imagen
+                //Pero quedará en la primera imagen
+
+                //anñadir a esto 
+                //la segunda imagen 
+                //.to('#escena_06 .hermana106', 0.0001, {x:550}, "-=2.8")
+                //ajustes hermanastras
+                //desaparecer la ultima escena y luevo volverlo aparecer en segundos
                 //.to('#escena_06 .hermana106', 0.1, {autoAlpha:0, x:340}, "-=3.5")
                 //.to('#escena_06 .hermana106', 0.1, {autoAlpha:1}, "-=2")
-                //.addLabel('final');
-            ANIM.anim_interact_6_hermanastraVerde.pause();
+                .addLabel('final');
+            ANIM.anim_interact_6_hermanastras.pause();
 
 
 
 
-          
 
-        
+            ANIM.anim_interact_7_principes = new TimelineMax(); // creo la interacción
+            ANIM.anim_interact_7_principes
+                .addLabel('inicio')
+                .addCallback(function(){
+                    Player.playSoundFX('zapatilla_brillante');
+                    Player.cambiaVolume('zapatilla_brillante', 1);
+                }, 2.5)
+                .fromTo('#escena_07 .principe07', 8,{backgroundPosition:'0% 0%'},{backgroundPosition:'-200% 0%', ease: SteppedEase.config(2)}, -0.1)
+                .fromTo('#escena_07 .cenicienta07', 8,{backgroundPosition:'0% 0%'},{backgroundPosition:'-200% 0%', ease: SteppedEase.config(2)},0) 
+                .fromTo('#escena_07 .hermana107', 8,{backgroundPosition:'0% 0%'},{backgroundPosition:'-200% 0%', ease: SteppedEase.config(2)},0)
+                .fromTo('#escena_07 .madrastra07', 8,{backgroundPosition:'0% 0%'},{backgroundPosition:'-200% 0%', ease: SteppedEase.config(2)},0)
+                .fromTo('#escena_07 .hermana207', 8,{backgroundPosition:'0% 0%'},{backgroundPosition:'-200% 0%', ease: SteppedEase.config(2)},0)
+                .fromTo('#escena_07 .luz', 2,{backgroundPosition:'0% 0%', opacity:0},{backgroundPosition:'-100% 0%',opacity:0.7, ease:SteppedEase.config(1)}, 1.5)
+                .to('#escena_07 .luz', 0.0001, {autoAlpha:0}, "-=2.8")
+                .addLabel('final');
+            ANIM.anim_interact_7_principes.pause(); 
+
+
+            /* Animacion escena08 */
+            /* let confetis = 50;
+            for(let i = confetis-1; i>=0; i--){
+                
+                ANIM.anim_interact_8_confetti = new TimelineMax(); // creo la interacción
+                let position = Math.floor((Math.random()*100)+1);
+                let delay = Math.random();
+                let speed = (Math.random() * 0.5) + 0.2
+
+                droplet = $(".spriteAzul .Azul");
+                droplet.style.left = position + "%";
+
+                ANIM.anim_interact_8_confetti
+                    .addLabel('inicio')
+                    .to(".spriteAzul .Azul", 1, {y:500, delay: delay, repeat: -1, ease:Linear.easeNone})
+                    .addLabel('final');
+                ANIM.anim_interact_8_confetti.pause(); 
+            } */
+
+            ANIM.anim_interact_8_confetti = new TimelineMax(); // creo la interacción
+            let confetis = 25;
+            for(let i=confetis-1; i>=0; i--){
+                let pos1=Math.floor((Math.random() * 100) + 1);
+                let pos2=Math.floor((Math.random() * 100) + 1);
+                let delay=Math.random();
+                //let speed=(Math.random() * 0.5) + 0.2;
+                droplet1= document.createElement("div");
+                droplet1.className = "spriteAzul Azul";
+                droplet1.style.left = pos1 + "%";
+
+                droplet2= document.createElement("div");
+                droplet2.className = "spriteRojo Rojo";
+                droplet2.style.left = pos2 + "%";
+
+                ANIM.anim_interact_8_confetti
+                
+                .to(droplet1, 1.6, {y:900, delay:delay, repeat:6, ease:Linear.easeNone, rotationY: 90},0)
+                .to(droplet1, 0.5, {repeat:-1, rotationY: 1080}, 0)
+                .to(droplet2, 0.3, {repeat:-1, rotationY: 1080}, 1)
+                .to(droplet2, 1.6, {y:900, delay:delay, repeat:6, ease:Linear.easeNone, rotationY: 90})
+                
+                document.getElementById("interacte").appendChild(droplet1);
+                document.getElementById("interacte").appendChild(droplet2);
+            }
+            ANIM.anim_interact_8_confetti.pause();
+           
+            ANIM.anim_interact_8_reyes = new TimelineMax();
+            ANIM.anim_interact_8_reyes
+                .addLabel('inicio')
+                .addCallback(function(){
+                    /* No hay el efecto de sonido "Publico celebrando" */
+                })
+                .fromTo('#escena_08 .reyes08', 1, {backgroundPosition:'0% 0%'},{backgroundPosition:'-200% 0%', ease: SteppedEase.config(2), repeat:10})
+                .fromTo('#escena_08 .mujeres08', 1, {backgroundPosition:'0% 0%'},{backgroundPosition:'-200% 0%', ease: SteppedEase.config(2), repeat:10},1)
+                .fromTo('#escena_08 .principes08', 3, {backgroundPosition:'100% 0%'},{backgroundPosition:'0% 0%', ease: SteppedEase.config(1), repeat: 3},0)
+                .addLabel('final');
+            ANIM.anim_interact_8_reyes.pause();
+                
+                /* ANIM.anim_interact_8_todas = new TimelineMax({repeat:3});
+                ANIM.anim_interact_8_todas
+                .addLabel('inicio')
+                .addCallback(function(){
+                    
+                })
+                .addLabel('final');
+                ANIM.anim_interact_8_todas.pause();
+                */
+            /* ANIM.anim_interact_8_principes = new TimelineMax({repeat:3});
+            ANIM.anim_interact_8_principes
+               .addLabel('inicio')
+                .to('#escena_08 .principes08', 0.001, {autoAlpha:0},"-=4")
+                .to('#escena_08 .principes08', 0.001, {backgroundPosition:'100% 0%', autoAlpha:1})
+                .addLabel('final');
+            ANIM.anim_interact_8_principes.pause(); */
+            
+            
         //Array de anin interacts
         ANIM.arr_interacts = [
 
@@ -972,6 +1145,9 @@ let ANIM = {
             ANIM.anim_interact_2_cenicienta,
 
             /*Pendientes los ANIM de la escena 3*/
+            ANIM.anim_interact_3_nubes,
+            ANIM.anim_interact_3_hada,
+            ANIM.anim_interact_3_transform,
 
             ANIM.anim_interact_4_pareja,
             ANIM.anim_interact_4_reyes,
@@ -984,7 +1160,16 @@ let ANIM = {
             ANIM.anim_interact_5_principes,
 
             ANIM.anim_interact_6_madrastra,
-            ANIM.anim_interact_6_hermanastraVerde,
+            ANIM.anim_interact_6_hermanastras,
+
+            ANIM.anim_interact_7_principes,
+
+
+            ANIM.anim_interact_8_reyes,
+            ANIM.anim_interact_8_todas,
+            ANIM.anim_interact_8_principes,
+            
+            ANIM.anim_interact_8_confetti,
           
             
            
@@ -1151,8 +1336,23 @@ let ANIM = {
                     if(btn.hasClass('primario')){
                         btn.click(function(){
                             $(this).css({"display":"none"});
-                            ANIM.anim_interact_3_cocinero.eventCallback("onComplete", muestralo, [$(this), cb]);   
-                            ANIM.anim_interact_3_cocinero.play(0);
+                            ANIM.anim_interact_3_nubes.eventCallback("onComplete", muestralo, [$(this), cb]);   
+                            ANIM.anim_interact_3_nubes.play(0);
+                        });
+                    }
+
+                    if(btn.hasClass('primario')){
+                        btn.click(function(){
+                            $(this).css({"display":"none"});
+                            ANIM.anim_interact_3_transform.eventCallback("onComplete", muestralo, [$(this), cb]);   
+                            ANIM.anim_interact_3_transform.play(0);
+                        });
+                    }
+                    if(btn.hasClass('primario')){
+                        btn.click(function(){
+                            $(this).css({"display":"none"});
+                            ANIM.anim_interact_3_hada.eventCallback("onComplete", muestralo, [$(this), cb]);   
+                            ANIM.anim_interact_3_hada.play(0);
                         });
                     }
                  break;
@@ -1221,49 +1421,59 @@ let ANIM = {
                 if(btn.hasClass('primario')){
                     btn.click(function(){
                         $(this).css({"display":"none"});
-                        ANIM.anim_interact_6_hermanastraVerde.eventCallback("onComplete", muestralo, [$(this), cb]);   
-                        ANIM.anim_interact_6_hermanastraVerde.play(0);
+                        ANIM.anim_interact_6_hermanastras.eventCallback("onComplete", muestralo, [$(this), cb]);   
+                        ANIM.anim_interact_6_hermanastras.play(0);
                         
                     });
                 }
                 
                  break;
              case 7:
-                 /**/ if(btn.hasClass('primario')){
-                    btn.click(function(){
-                        $(this).css({"display":"none"});
-                        ANIM.anim_interact_7_feliz.eventCallback("onComplete", muestralo, [$(this), cb]);   
-                        ANIM.anim_interact_7_feliz.play(0);
-                        
-                    });
-                 }
+                 
+
                  if(btn.hasClass('primario')){
                     btn.click(function(){
                         $(this).css({"display":"none"});
-                        ANIM.anim_interact_7_perro.eventCallback("onComplete", muestralo, [$(this), cb]);   
-                        ANIM.anim_interact_7_perro.play(0);
+                        ANIM.anim_interact_7_principes.eventCallback("onComplete", muestralo, [$(this), cb]);   
+                        ANIM.anim_interact_7_principes.play(0);
                         
                     });
                  }
                  break;
+
              case 8:   
                 if(btn.hasClass('primario')){
                     btn.click(function(){
                         $(this).css({"display":"none"});
-                        ANIM.anim_interact_8_sergio.eventCallback("onComplete", muestralo, [$(this), cb]);   
-                        ANIM.anim_interact_8_sergio.play(0);
-                        
+                        ANIM.anim_interact_8_reyes.eventCallback("onComplete", muestralo, [$(this), cb]);   
+                        ANIM.anim_interact_8_reyes.play(0);
                     });
-                 }
-                 if(btn.hasClass('primario')){
+                }
+
+                if(btn.hasClass('primario')){
                     btn.click(function(){
                         $(this).css({"display":"none"});
-                        ANIM.anim_interact_8_dance.eventCallback("onComplete", muestralo, [$(this), cb]);   
-                        ANIM.anim_interact_8_dance.play(0);
-                        
+                        ANIM.anim_interact_8_confetti.eventCallback("onComplete", muestralo, [$(this), cb]);   
+                        ANIM.anim_interact_8_confetti.play(0);
                     });
-                 }
-                 break;
+                } 
+            
+                if(btn.hasClass('primario')){
+                    btn.click(function(){
+                        $(this).css({"display":"none"});
+                        ANIM.anim_interact_8_todas.eventCallback("onComplete", muestralo, [$(this), cb]);   
+                        ANIM.anim_interact_8_todas.play(0);
+                    });
+                } 
+
+                if(btn.hasClass('primario')){
+                    btn.click(function(){
+                        $(this).css({"display":"none"});
+                        ANIM.anim_interact_8_principes.eventCallback("onComplete", muestralo, [$(this), cb]);   
+                        ANIM.anim_interact_8_principes.play(0);
+                    });
+                } 
+                break;
              
         }
     },
