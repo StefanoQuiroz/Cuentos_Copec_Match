@@ -158,10 +158,6 @@ let JSON_CUENTO = {
                     texto: "El príncipe bailó con ella toda la noche;<br>y ni la madrastra ni sus hermanastras reconocieron a la joven.",
                     tiempo:[6.3,14.1,0.5] 
                 }
-                /* {
-                    texto: "Prueba Borrar",
-                    tiempo:[14.2,14.6,0.1] 
-                } */
             ]
         },
         {
@@ -202,10 +198,6 @@ let JSON_CUENTO = {
                     texto: "Las hermanastras intentaron que la zapatilla les calzara por todos los medios,<br> pero sus pies eran demasiado grandes y gruesos.",
                     tiempo:[12.0,21.0,0.5] 
                 }
-               /*  ,{
-                    texto: "Prueba Borrar",
-                    tiempo:[21.0,21.2,0.2] 
-                } */
             ]
         },
         {
@@ -222,10 +214,6 @@ let JSON_CUENTO = {
                     texto: "Pero para su sorpresa, el zapato calzó perfectamente en el fino pie de la joven.",
                     tiempo:[8.8,16.1,0.5] 
                 }
-               /*  ,{
-                    texto: "Prueba Borrar",
-                    tiempo:[16.4,16.5,0.3] 
-                } */
             ]
         },
         {
@@ -246,10 +234,6 @@ let JSON_CUENTO = {
                     texto: "Y colorín, colorado, éste cuento se ha acabado.",
                     tiempo:[11.6,15.8,0.5] 
                 } 
-                /* ,{
-                    texto: "Prueba Borrar",
-                    tiempo:[16.0,16.2,0.2] 
-                } */
             ]
         },
            
@@ -317,29 +301,6 @@ let ANIM = {
         });
     },
 
-    /* animaescena_7: () => {
-        if (!ANIM.anim_interact_7_feliz) {
-            ANIM.anim_interact_7_feliz = new TimelineMax({ repeat: -1 }); // creo la interacción
-            ANIM.anim_interact_7_feliz
-        
-           .addLabel('inicio')
-           .fromTo('#escena_07 .feliz', 2,{backgroundPosition:'0% 0%'},{backgroundPosition:'-1700% 0%', ease: SteppedEase.config(17)})
-           .addLabel('final');
-       }
-        ANIM.anim_interact_7_feliz.resume();
-    }, */
-
-    //Intento de desaparecer la madrastra ES02
-    /* animaescena_2: () => {
-        
-        ANIM.anim_interact_2_madrastraEnojada = new TimelineMax(); // creo la interacción
-        ANIM.anim_interact_2_madrastraEnojada
-            .addLabel('inicio')
-            .to('#escena_02 .madrastraEnojadaEs02', 1, {autoAlpha:1})
-            .addLabel('final');
-        ANIM.anim_interact_2_madrastraEnojada.resume();
-    },
-    */
     pauseAnimaciones: () => {
 
         try { ANIM.anim_interact_2_madrastraEnojada.pause(0) }
@@ -539,9 +500,6 @@ let ANIM = {
             Player.resetSubtitulos();
         }, "fin_escena_8");
         
-    
-
-       
         ANIM.creaAnimInteractividad();
         ANIM.main_tl.pause();
     },
@@ -823,25 +781,6 @@ let ANIM = {
                 .addLabel('final');     
         ANIM.anim_interact_3_transform.pause();
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         /***************************************************************************************/
 
         //Escena04
@@ -1024,10 +963,6 @@ let ANIM = {
                 .addLabel('final');
             ANIM.anim_interact_6_hermanastras.pause();
 
-
-
-
-
             ANIM.anim_interact_7_principes = new TimelineMax(); // creo la interacción
             ANIM.anim_interact_7_principes
                 .addLabel('inicio')
@@ -1125,7 +1060,6 @@ let ANIM = {
         //Array de anin interacts
         ANIM.arr_interacts = [
 
-            ANIM.anim_interact_1, // agrego la interacción al array //no vale nada, no hace nada
             ANIM.anim_interact_0_cenicienta,
             ANIM.anim_interact_0_pajaro1,
             ANIM.anim_interact_0_pajaro2,
@@ -1144,7 +1078,6 @@ let ANIM = {
             ANIM.anim_interact_2_madrastraEnojada,
             ANIM.anim_interact_2_cenicienta,
 
-            /*Pendientes los ANIM de la escena 3*/
             ANIM.anim_interact_3_nubes,
             ANIM.anim_interact_3_hada,
             ANIM.anim_interact_3_transform,
@@ -1478,20 +1411,6 @@ let ANIM = {
         }
     },
     compensaEscenas:(d) => {
-        // ESTA FUNCIÓN HAY QUE CONFIGURARLA A MANO POR CADA ESCENA QUE LO NECESITE 
-        // (EN ESTE CASO LA ILUSTRACIÓN SE PERDÍA POR ARRIBA, POR ESO ESE COMPENSA POR TOP,
-        // SI FUESE AL REVÉS COMPENSARÍA POR BOTTOM)
        let dif = Math.abs(d); 
-//        $('#escena_00').css({'bottom':dif+'px'});
-//        $('#escena_01').css({'top':dif+'px'});
-//        $('#escena_02').css({'bottom':dif+'px'});
-//        $('#escena_03').css({'bottom':dif+'px'});
-//        $('#escena_04').css({'bottom':dif+'px'});
-//        $('#escena_05').css({'bottom':dif+'px'});
-//        $('#escena_07').css({'bottom':dif+'px'});
-//        $('#escena_08').css({'bottom':dif+'px'});
-//        $('#escena_09').css({'bottom':dif+'px'});
-//        $('#escena_10').css({'bottom':dif+'px'});
     }
-         /*↑↑↑↑ HASTA LA ANTERIOR ↑↑↑↑↑*/
 };
