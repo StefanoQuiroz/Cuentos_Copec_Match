@@ -168,7 +168,7 @@ let JSON_CUENTO = {
             [
                 {
                     texto: "Al oír las campanadas que daban la media noche, Cenicienta recordó el encantamiento y corrió para no ser descubierta.",
-                    tiempo:[0,7.9,5] 
+                    tiempo:[0,7.9,7.7] 
                 },
                 {
                     texto: "Pero con el apuro, perdió una de sus zapatillas de cristal al bajar las escaleras del castillo.",
