@@ -168,7 +168,7 @@ let JSON_CUENTO = {
             [
                 {
                     texto: "Al oír las campanadas que daban la media noche, Cenicienta recordó el encantamiento y corrió para no ser descubierta.",
-                    tiempo:[0,7.9,12] 
+                    tiempo:[0,7.9,5] 
                 },
                 {
                     texto: "Pero con el apuro, perdió una de sus zapatillas de cristal al bajar las escaleras del castillo.",
@@ -590,70 +590,64 @@ let ANIM = {
             }
         ANIM.anim_interact_0_humo.pause();
        
-        ANIM.anim_interact_1_cenicienta = new TimelineMax(); 
+        ANIM.anim_interact_1_cenicienta = new TimelineMax();
         ANIM.anim_interact_1_cenicienta
-                .addLabel('inicio')
-                .to('#escena_01 .cenicienta02',3.7,{x:800, ease:"circ.out"})
-                .fromTo('#escena_01 .cenicienta02', 0.8,{backgroundPosition:'0% 0%'},{backgroundPosition:'-200% 0%', ease: SteppedEase.config(2), repeat:3}, "-=4")
-                .addLabel('final');     
+            .addLabel('inicio')
+            .to('#escena_01 .cenicienta02',3.7,{x:800, ease:"circ.out"},0)
+            .fromTo('#escena_01 .cenicienta02', 0.8,{backgroundPosition:'0% 0%'},{backgroundPosition:'-200% 0%', ease: SteppedEase.config(2), repeat:3},0)
+            .addLabel('final');     
         ANIM.anim_interact_1_cenicienta.pause();
 
-        ANIM.anim_interact_1_paje = new TimelineMax({repeat:2}); 
+        ANIM.anim_interact_1_paje = new TimelineMax();
         ANIM.anim_interact_1_paje
-                .addLabel('inicio')
-                .fromTo('#escena_01 .mensajero', 1,{backgroundPosition:'0% 0%'},{backgroundPosition:'-300% 0%', ease: SteppedEase.config(3)}, "+=1")
-                .addLabel('final');     
+            .addLabel('inicio')
+            .fromTo('#escena_01 .mensajero', 3,{backgroundPosition:'0% 0%'},{backgroundPosition:'-300% 0%', ease: SteppedEase.config(3)}, 2)
+            .addLabel('final');     
         ANIM.anim_interact_1_paje.pause();
-
-        ANIM.anim_interact_1_publico = new TimelineMax({repeat:2}); 
+        
+        ANIM.anim_interact_1_publico = new TimelineMax();
         ANIM.anim_interact_1_publico
             .addLabel('inicio')
             .addCallback(function(){
                 Player.playSoundFX('hombre_pensativo');
-                Player.cambiaVolume('hombre_pensativo', 0.6);
-            })
-            .fromTo('#escena_01 .guerrero', 1,{backgroundPosition:'0% 0%'},{backgroundPosition:'-200% 0%', ease: SteppedEase.config(2)})
-            .fromTo('#escena_01 .doncella', 1,{backgroundPosition:'0% 0%'},{backgroundPosition:'-200% 0%', ease: SteppedEase.config(2)})
-            .fromTo('#escena_01 .granjero', 1,{backgroundPosition:'0% 0%'},{backgroundPosition:'-200% 0%', ease: SteppedEase.config(2)})
-            .fromTo('#escena_01 .pintor', 1,{backgroundPosition:'0% 0%'},{backgroundPosition:'-200% 0%', ease: SteppedEase.config(2)})
+                Player.cambiaVolume('hombre_pensativo', 0.4);
+            },4)
+            .fromTo('#escena_01 .guerrero', 2,{backgroundPosition:'0% 0%'},{backgroundPosition:'-200% 0%', ease: SteppedEase.config(2)},4)
+            .fromTo('#escena_01 .doncella', 2,{backgroundPosition:'0% 0%'},{backgroundPosition:'-200% 0%', ease: SteppedEase.config(2)},4)
+            .fromTo('#escena_01 .granjero', 2,{backgroundPosition:'0% 0%'},{backgroundPosition:'-200% 0%', ease: SteppedEase.config(2)},4)
+            .fromTo('#escena_01 .pintor', 2,{backgroundPosition:'0% 0%'},{backgroundPosition:'-200% 0%', ease: SteppedEase.config(2)},4)
             .addLabel('final');
         ANIM.anim_interact_1_publico.pause();
-        
-        ANIM.anim_interact_1_mujeres= new TimelineMax({repeat:2}); 
+
+        ANIM.anim_interact_1_mujeres = new TimelineMax();
         ANIM.anim_interact_1_mujeres
             .addLabel('inicio')
             .addCallback(function(){
                 Player.playSoundFX('suspiro_de_mujer');
-                Player.cambiaVolume('suspiro_de_mujer', 0.2);
-            }, "+=1")
-            .fromTo('#escena_01 .hermana1', 1,{backgroundPosition:'0% 0%'},{backgroundPosition:'-200% 0%', ease: SteppedEase.config(2)})
-            .fromTo('#escena_01 .hermana2', 1,{backgroundPosition:'0% 0%'},{backgroundPosition:'-200% 0%', ease: SteppedEase.config(2)}, "+=1")
+                Player.cambiaVolume('suspiro_de_mujer', 0.3);
+            }, 6)
+            .fromTo('#escena_01 .hermana1', 2,{backgroundPosition:'0% 0%'},{backgroundPosition:'-200% 0%', ease: SteppedEase.config(2)}, 5.5)
+            .fromTo('#escena_01 .hermana2', 2,{backgroundPosition:'0% 0%'},{backgroundPosition:'-200% 0%', ease: SteppedEase.config(2)}, 5.5)
             .addLabel('final');
         ANIM.anim_interact_1_mujeres.pause();
 
-        ANIM.anim_interact_1_madrastra= new TimelineMax({repeat:2});
+        ANIM.anim_interact_1_madrastra= new TimelineMax();
         ANIM.anim_interact_1_madrastra
             .addLabel('inicio')
             .addCallback(function(){
                 Player.playSoundFX('madrastra_pensando');
-                Player.cambiaVolume('madrastra_pensando', 0.5);
-            }, "+=1")
-            .fromTo('#escena_01 .madrastra_es01', 1,{backgroundPosition:'0% 0%'},{backgroundPosition:'-200% 0%', ease: SteppedEase.config(2)}, "+=1")
+                Player.cambiaVolume('madrastra_pensando', 0.3);
+            }, 8)
+            .fromTo('#escena_01 .madrastra_es01', 3,{backgroundPosition:'0% 0%'},{backgroundPosition:'-200% 0%', ease: SteppedEase.config(2)}, 7.5)
             .addLabel('final');
         ANIM.anim_interact_1_madrastra.pause();
-      
-        ANIM.anim_interact_1_nubes= new TimelineMax({repeat:1, yoyo:true});
+
+        ANIM.anim_interact_1_nubes= new TimelineMax({repeat:1, yoyo:true}); 
         ANIM.anim_interact_1_nubes
             .addLabel('inicio')     
             .fromTo('#escena_01 .solAlternativo', 5,{backgroundPosition:'0% 0%'},{backgroundPosition:'-200% 0%', ease: SteppedEase.config(2), repeat:-1},0)
-            .fromTo('#escena_01 .nube1', 50,
-                    {backgroundPosition:'0% 0%'},
-                    {backgroundPosition:'-200% 0%', x:950},0
-                   )
-            .fromTo('#escena_01 .nube2', 50,
-                   {backgroundPosition:'0% 0%'},
-                   {backgroundPosition:'-200% 0%', x:-950},0
-                  ) 
+            .fromTo('#escena_01 .nube1', 50,{backgroundPosition:'0% 0%'},{backgroundPosition:'-200% 0%', x:950},0)
+            .fromTo('#escena_01 .nube2', 50,{backgroundPosition:'0% 0%'},{backgroundPosition:'-200% 0%', x:-950},0) 
             .addLabel('final');
         ANIM.anim_interact_1_nubes.pause(); 
 
@@ -707,29 +701,29 @@ let ANIM = {
         ANIM.anim_interact_3_hada = new TimelineMax();
         ANIM.anim_interact_3_hada
                 .addLabel('inicio')
-                .from('#escena_03 .brazoAdaVarita', 2,{rotation:10}, {rotation: -18, yoyo:true, repeat:0, ease: SteppedEase.config(1)})
+                .from('#escena_03 .brazoAdaVarita', 1.5,{rotation:10}, {rotation: -18, yoyo:true, repeat:0, ease: SteppedEase.config(1)})
                 .fromTo('#escena_03 .cenicienta03',1,{backgroundPosition:'-200% 0%'},{autoAlpha:0},'-=0.4')
                 .addCallback(function(){
                     Player.playSoundFX('magic_wand');
                     Player.cambiaVolume('magic_wand', 0.5);
                 }, 1.5)
                 .fromTo('#escena_03 .princesa03', 2,{backgroundPosition:'0% 0%'},{backgroundPosition:'-200% 0%',ease: SteppedEase.config(2), autoAlpha:1},1)
-                .fromTo('#escena_03 .raton1', 2.5,{backgroundPosition:'0% 0%'},{backgroundPosition:'-200% 0%',css:{scaleX:1.5, scaleY:1.5}, ease: SteppedEase.config(2)},2)
-                .fromTo('#escena_03 .raton2', 2.5,{backgroundPosition:'0% 0%'},{backgroundPosition:'-200% 0%',css:{scaleX:1.5, scaleY:1.5}, ease: SteppedEase.config(2)},3)
-                .fromTo('#escena_03 .calabaza', 3,{backgroundPosition: '0% 0%'},{css:{scaleX:1.4, scaleY:1.4},ease:Elastic.easeOut.config(1,0.2)},9)
-                .fromTo('#escena_03 .raton1',2,{backgroundPosition:'0% 0%'},{autoAlpha:0}, "-=7")
-                .fromTo('#escena_03 .raton2', 2,{backgroundPosition:'0% 0%'},{autoAlpha:0},"-=7")
-                .fromTo('#escena_03 .caballo1', 2,{backgroundPosition:'0% 0%'},{autoAlpha:1},'-=6.2')
-                .fromTo('#escena_03 .caballo2', 2,{backgroundPosition:'0% 0%'},{autoAlpha:1},'-=6')
+                .fromTo('#escena_03 .raton1', 2,{backgroundPosition:'0% 0%'},{backgroundPosition:'-200% 0%',css:{scaleX:1.5, scaleY:1.5}, ease: SteppedEase.config(2)},1)
+                .fromTo('#escena_03 .raton2', 2,{backgroundPosition:'0% 0%'},{backgroundPosition:'-200% 0%',css:{scaleX:1.5, scaleY:1.5}, ease: SteppedEase.config(2)},1)
+                .fromTo('#escena_03 .calabaza', 3,{backgroundPosition: '0% 0%'},{css:{scaleX:1.4, scaleY:1.4},ease:Elastic.easeOut.config(1,0.2)},1)
+                .fromTo('#escena_03 .raton1',2,{backgroundPosition:'0% 0%'},{autoAlpha:0}, 1)
+                .fromTo('#escena_03 .raton2', 2,{backgroundPosition:'0% 0%'},{autoAlpha:0},1)
+                .fromTo('#escena_03 .caballo1', 3,{backgroundPosition:'0% 0%'},{autoAlpha:1},2)
+                .fromTo('#escena_03 .caballo2', 3,{backgroundPosition:'0% 0%'},{autoAlpha:1},2)
                 .addCallback(function(){
                     Player.playSoundFX('relincho_de_caballo');
                     Player.cambiaVolume('relincho_de_caballo', 0.1);
-                }, 6)
+                }, 4)
                 .fromTo('#escena_03 .caballo1',2,{backgroundPosition:'0% 0%'},{backgroundPosition:'-200% 0%',ease: SteppedEase.config(2), repeat: 6}, 4)
                 .fromTo('#escena_03 .caballo2', 2,{backgroundPosition:'0% 0%'},{backgroundPosition:'-200% 0%',ease: SteppedEase.config(2), repeat: 6}, 4.2)
-                .fromTo('#escena_03 .calabaza', 3,{backgroundPosition: '0% 0%'},{css:{scaleX:1.4, scaleY:1.4},ease:Elastic.easeOut.config(1,0.2)}, "+=4")
-                .fromTo('#escena_03 .calabaza', 1,{backgroundPosition:'0% 0%'},{autoAlpha:0},'-=15')
-                .fromTo('#escena_03 .carruaje', 4,{backgroundPosition:'0% 0%'},{backgroundPosition:'-100% 0%',ease:Elastic.easeOut.config(1,0.2), css:{scaleX:1.05, scaleY:1.05, opacity:1}}, "-=14.8")
+                .fromTo('#escena_03 .calabaza', 2,{backgroundPosition: '0% 0%'},{css:{scaleX:1.4, scaleY:1.4},ease:Elastic.easeOut.config(1,0.2)}, 2)
+                .fromTo('#escena_03 .calabaza', 2,{backgroundPosition:'0% 0%'},{autoAlpha:0},2)
+                .fromTo('#escena_03 .carruaje', 4,{backgroundPosition:'0% 0%'},{backgroundPosition:'-100% 0%',ease:Elastic.easeOut.config(1,0.2), css:{scaleX:1.05, scaleY:1.05, opacity:1}}, 3)
                 .addLabel('final');     
         ANIM.anim_interact_3_hada.pause();
 
@@ -739,37 +733,37 @@ let ANIM = {
             .addCallback(function(){
                 Player.playSoundFX('cancion_baile_cortada');
                 Player.cambiaVolume('cancion_baile_cortada', 0.5);
-            })
-            .fromTo('#escena_04 .principesEs04',2.5,{backgroundPosition:'0% 0%'}, {backgroundPosition:'-200% 0%', ease: SteppedEase.config(2), x:300, repeat:6})
-            .to('#escena_04 .principesEs04', 2.5,{x:-15, yoyo:true})
+            },0)
+            .fromTo('#escena_04 .principesEs04',2.4,{backgroundPosition:'0% 0%'}, {backgroundPosition:'-200% 0%', ease: SteppedEase.config(2), x:300, repeat:6},0)
+            .to('#escena_04 .principesEs04', 2,{x:-15, yoyo:true})
             .addLabel('final')
         ANIM.anim_interact_4_pareja.pause(); 
 
-        ANIM.anim_interact_4_reyes = new TimelineMax({repeat:3});
+        ANIM.anim_interact_4_reyes = new TimelineMax();
         ANIM.anim_interact_4_reyes
             .addLabel('inicio')
             .addCallback(function(){
                 Player.playSoundFX('mujer_asombrada');
                 Player.cambiaVolume('mujer_asombrada', 0.5);
-            }, "+=1")
-            .fromTo('#escena_04 .reina',1,{backgroundPosition:'0% 0%'}, {backgroundPosition:'-200% 0%', ease: SteppedEase.config(2)},2)
-            .fromTo('#escena_04 .rey',1,{backgroundPosition:'0% 0%'}, {backgroundPosition:'-200% 0%', ease: SteppedEase.config(2)})
+            }, "+=2")
+            .fromTo('#escena_04 .reina',1,{backgroundPosition:'0% 0%'}, {backgroundPosition:'-200% 0%', ease: SteppedEase.config(2)},"+=0")
+            .fromTo('#escena_04 .rey',1,{backgroundPosition:'0% 0%'}, {backgroundPosition:'-200% 0%', ease: SteppedEase.config(2)},"+=0")
             .addLabel('final');
         ANIM.anim_interact_4_reyes.pause(); 
 
-        ANIM.anim_interact_4_mujeres= new TimelineMax({repeat:2});
+        ANIM.anim_interact_4_mujeres= new TimelineMax();
         ANIM.anim_interact_4_mujeres
             .addLabel('inicio')
-            .fromTo('#escena_04 .hermanaEs04', 1,{backgroundPosition:'0% 0%'},{backgroundPosition:'-200% 0%', ease: SteppedEase.config(2)},6)
-            .fromTo('#escena_04 .madrastraEs04', 1,{backgroundPosition:'0% 0%'},{backgroundPosition:'-200% 0%', ease: SteppedEase.config(2)})
-            .fromTo('#escena_04 .hermana2Es04', 1,{backgroundPosition:'0% 0%'},{backgroundPosition:'-200% 0%', ease: SteppedEase.config(2)})
+            .fromTo('#escena_04 .hermanaEs04', 1,{backgroundPosition:'0% 0%'},{backgroundPosition:'-200% 0%', ease: SteppedEase.config(2)}, "+=4")
+            .fromTo('#escena_04 .madrastraEs04', 1,{backgroundPosition:'0% 0%'},{backgroundPosition:'-200% 0%', ease: SteppedEase.config(2)},"+=0")
+            .fromTo('#escena_04 .hermana2Es04', 1,{backgroundPosition:'0% 0%'},{backgroundPosition:'-200% 0%', ease: SteppedEase.config(2)},"+=0")
             .addLabel('final');
         ANIM.anim_interact_4_mujeres.pause();
 
         ANIM.anim_interact_4_puntero = new TimelineMax();
         ANIM.anim_interact_4_puntero
             .addLabel('inicio')
-            .to('#escena_04 .puntero', 9.2, {rotation: "360", repeat:1, ease: Linear.easeNone,transformOrigin: '3px 4px'})
+            .to('#escena_04 .puntero', 9.2, {rotation: "360", repeat:1, ease: Linear.easeNone,transformOrigin: '3px 4px'},0)
             .addLabel('final');
         ANIM.anim_interact_4_puntero.pause();      
         
