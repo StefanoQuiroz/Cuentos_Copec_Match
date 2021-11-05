@@ -624,7 +624,7 @@ let ANIM = {
             .addLabel('inicio')
             .addCallback(function(){
                 Player.playSoundFX('suspiro_de_mujer');
-                Player.cambiaVolume('suspiro_de_mujer', 0.3);
+                Player.cambiaVolume('suspiro_de_mujer', 0.4);
             }, 6)
             .fromTo('#escena_01 .hermana1', 2,{backgroundPosition:'0% 0%'},{backgroundPosition:'-200% 0%', ease: SteppedEase.config(2)}, 5.5)
             .fromTo('#escena_01 .hermana2', 2,{backgroundPosition:'0% 0%'},{backgroundPosition:'-200% 0%', ease: SteppedEase.config(2)}, 5.5)
