@@ -26,9 +26,14 @@ let JSON_CUENTO = {
     
     ], 
     fx_sonido:[
+        {nombre:"bosque_nocturno", url:"audio/cenicienta/fx/bosque_nocturno.mp3"},
         {nombre:"campanadas_media_noche", url:"audio/cenicienta/fx/campanadas_de_media_noche.mp3"},
         {nombre:"cancion_baile", url:"audio/cenicienta/fx/cancion_de_baile.mp3" },
         {nombre:"cancion_baile_cortada", url:"audio/cenicienta/fx/cancion_de_baile_cortada.mp3" },
+        {nombre:"celebracion_campanas", url:"audio/cenicienta/fx/celebracion_campanas.mp3" },
+        {nombre:"cenicienta_caminando", url:"audio/cenicienta/fx/cenicienta_caminando.mp3" },
+        {nombre:"cenicienta_caminando_cortado", url:"audio/cenicienta/fx/cenicienta_caminando_cortado.mp3" },
+        {nombre:"cenicienta_preocupada", url:"audio/cenicienta/fx/cenicienta_preocupada.mp3" },
         {nombre:"hombre_pensativo", url:"audio/cenicienta/fx/hombre_pensativo.mp3" },
         {nombre: "madrastra_pensando", url: "audio/cenicienta/fx/madrastra_pensando.mp3" },
         {nombre: "magic_wand", url: "audio/cenicienta/fx/magic_wand.mp3" },
@@ -56,7 +61,7 @@ let JSON_CUENTO = {
             [
                 {
                     texto: "Había una vez una joven que vivía con su madrastra y sus dos hermanastras.",
-                    tiempo:[0,5.4,12] 
+                    tiempo:[0,5.4,10] 
                 },
                 {
                     texto: "Ellas envidiaban su belleza y luego de la muerte de sus padre,<br>la obligaron a realizar todas las labores de la casa.",
@@ -152,7 +157,7 @@ let JSON_CUENTO = {
             [
                 {
                     texto: "Cuando Cenicienta llegó al baile, todos quedaron admirados por su belleza y distinción.",
-                    tiempo:[0,5.8,11] 
+                    tiempo:[0,5.8,0.5] 
                 },
                 {
                     texto: "El príncipe bailó con ella toda la noche;<br>y ni la madrastra ni sus hermanastras reconocieron a la joven.",
@@ -366,14 +371,17 @@ let ANIM = {
         }, "3_1_audio_fade");
         
         /* Efecto de sonido de la escena04 antes de la narracion  */
+        /* 
         ANIM.main_tl.addLabel('4_0_audio', 'escena_4+=0.1');
         ANIM.main_tl.addLabel('4_0_audio_fade', '4_0-=2');
         ANIM.main_tl.addCallback(function () {
             Player.playSoundFX('cancion_baile');
         }, '4_0_audio');
+        
         ANIM.main_tl.addCallback(function () {
             ANIM.fadeVolume('cancion_baile',1,0,2);
-        }, "4_0_audio_fade");
+        }, "4_0_audio_fade"); 
+        */
 
         /* Efecto de sonido de la escena05 antes de la narracion */
         ANIM.main_tl.addLabel('5_0_audio', 'escena_5+=0.1');
@@ -449,6 +457,8 @@ let ANIM = {
             Player.activaBtnSiguiente();
             Player.tooglePlayPauseIco();
             Player.resetSubtitulos();
+            Player.playSoundFX('bosque_nocturno');
+            Player.cambiaVolume('bosque_nocturno',0.5);
         }, "fin_escena_3");
         
         /*LLAMADAS Y FUNCIONES ESCENA 4*/ //<-----------------------------------------------------
@@ -517,6 +527,8 @@ let ANIM = {
             Player.activaBtnSiguiente();
             Player.tooglePlayPauseIco();
             Player.resetSubtitulos();
+            Player.playSoundFX('celebracion_campanas');
+            Player.cambiaVolume('celebracion_campanas',0.4);
         }, "fin_escena_8");
         ANIM.creaAnimInteractividad();
         ANIM.main_tl.pause();
@@ -593,6 +605,10 @@ let ANIM = {
         ANIM.anim_interact_1_cenicienta = new TimelineMax();
         ANIM.anim_interact_1_cenicienta
             .addLabel('inicio')
+            .addCallback(function(){
+                Player.playSoundFX('cenicienta_caminando_cortado');
+                Player.cambiaVolume('cenicienta_caminando_cortado', 0.3);
+            },0)
             .to('#escena_01 .cenicienta02',3.7,{x:800, ease:"circ.out"},0)
             .fromTo('#escena_01 .cenicienta02', 0.8,{backgroundPosition:'0% 0%'},{backgroundPosition:'-200% 0%', ease: SteppedEase.config(2), repeat:3},0)
             .addLabel('final');     
@@ -657,9 +673,9 @@ let ANIM = {
             .addCallback(function(){
                 Player.playSoundFX('risa_malvada');
                 Player.cambiaVolume('risa_malvada', 0.3);
-            })
-            .fromTo('#escena_02 .hermana2Es02', 0.8,{backgroundPosition:'0% 0%'},{backgroundPosition:'-200% 0%', ease: SteppedEase.config(2), repeat:2})
-            .fromTo('#escena_02 .hermanaEs02', 0.8,{backgroundPosition:'0% 0%'},{backgroundPosition:'-200% 0%', ease: SteppedEase.config(2), repeat:2}, "-=2")
+            },0)
+            .fromTo('#escena_02 .hermana2Es02', 0.8,{backgroundPosition:'0% 0%'},{backgroundPosition:'-200% 0%', ease: SteppedEase.config(2), repeat:1},0)
+            .fromTo('#escena_02 .hermanaEs02', 0.8,{backgroundPosition:'0% 0%'},{backgroundPosition:'-200% 0%', ease: SteppedEase.config(2), repeat:1},0)
             .addLabel('final');
         ANIM.anim_interact_2_mujeres3.pause();
         
@@ -669,15 +685,19 @@ let ANIM = {
            .addCallback(function(){
                Player.playSoundFX('no_de_madrastra');
                Player.cambiaVolume('no_de_madrastra', 0.3);
-           }, "+=3")
-           .fromTo('#escena_02 .manoEs02', 0.2, {rotation:8}, {rotation:"-=15.4", yoyo:true, repeat:6})
+           }, 2.5)
+           .fromTo('#escena_02 .manoEs02', 0.2, {rotation:8}, {rotation:"-=15.4", yoyo:true, repeat:6}, 2.5)
            .addLabel('final');
         ANIM.anim_interact_2_madrastraEnojada.pause();
 
         ANIM.anim_interact_2_cenicienta = new TimelineMax();
         ANIM.anim_interact_2_cenicienta
                 .addLabel('inicio')
-                .fromTo('#escena_02 .cenicientaEs02', 8,{backgroundPosition:'0% 0%'},{backgroundPosition:'-200% 0%', ease: SteppedEase.config(2), repeat:0}, "+=1")
+                .addCallback(function(){
+                    Player.playSoundFX('cenicienta_preocupada');
+                    Player.cambiaVolume('cenicienta_preocupada', 0.2);
+                }, 3.5)
+                .fromTo('#escena_02 .cenicientaEs02', 3,{backgroundPosition:'0% 0%'},{backgroundPosition:'-200% 0%', ease: SteppedEase.config(2), repeat:0}, 3)
                 .addLabel('final');     
         ANIM.anim_interact_2_cenicienta.pause();
         
@@ -880,7 +900,7 @@ let ANIM = {
             .addCallback(function(){
                 /* No hay el efecto de sonido "Publico celebrando" */
             })
-            .fromTo('#escena_08 .reyes08', 1, {backgroundPosition:'0% 0%'},{backgroundPosition:'-200% 0%', ease: SteppedEase.config(2), repeat:10})
+            .fromTo('#escena_08 .reyes08', 1, {backgroundPosition:'0% 0%'},{backgroundPosition:'-200% 0%', ease: SteppedEase.config(2), repeat:10},1)
             .fromTo('#escena_08 .mujeres08', 1, {backgroundPosition:'0% 0%'},{backgroundPosition:'-200% 0%', ease: SteppedEase.config(2), repeat:10},1)
             .fromTo('#escena_08 .principes08', 3, {backgroundPosition:'100% 0%'},{backgroundPosition:'0% 0%', ease: SteppedEase.config(1), repeat: 3},0)
             .addLabel('final');
