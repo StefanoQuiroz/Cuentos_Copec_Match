@@ -527,8 +527,8 @@ let ANIM = {
             Player.activaBtnSiguiente();
             Player.tooglePlayPauseIco();
             Player.resetSubtitulos();
-            Player.playSoundFX('celebracion_campanas');
-            Player.cambiaVolume('celebracion_campanas',0.4);
+            //Player.playSoundFX('celebracion_campanas');
+            //Player.cambiaVolume('celebracion_campanas',0.4);
         }, "fin_escena_8");
         ANIM.creaAnimInteractividad();
         ANIM.main_tl.pause();
@@ -898,11 +898,12 @@ let ANIM = {
         ANIM.anim_interact_8_reyes
             .addLabel('inicio')
             .addCallback(function(){
-                /* No hay el efecto de sonido "Publico celebrando" */
-            })
-            .fromTo('#escena_08 .reyes08', 1, {backgroundPosition:'0% 0%'},{backgroundPosition:'-200% 0%', ease: SteppedEase.config(2), repeat:10},1)
-            .fromTo('#escena_08 .mujeres08', 1, {backgroundPosition:'0% 0%'},{backgroundPosition:'-200% 0%', ease: SteppedEase.config(2), repeat:10},1)
-            .fromTo('#escena_08 .principes08', 3, {backgroundPosition:'100% 0%'},{backgroundPosition:'0% 0%', ease: SteppedEase.config(1), repeat: 3},0)
+                Player.playSoundFX('celebracion_campanas');
+                Player.cambiaVolume('celebracion_campanas', 0.5);
+            }, 0)
+            .fromTo('#escena_08 .reyes08', 1, {backgroundPosition:'0% 0%'},{backgroundPosition:'-200% 0%', ease: SteppedEase.config(2), repeat:10},2)
+            .fromTo('#escena_08 .mujeres08', 1, {backgroundPosition:'0% 0%'},{backgroundPosition:'-200% 0%', ease: SteppedEase.config(2), repeat:10},2)
+            .fromTo('#escena_08 .principes08', 3, {backgroundPosition:'100% 0%'},{backgroundPosition:'0% 0%', ease: SteppedEase.config(1), repeat: 3},1)
             .addLabel('final');
         ANIM.anim_interact_8_reyes.pause();
   
