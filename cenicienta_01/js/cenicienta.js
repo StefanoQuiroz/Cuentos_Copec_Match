@@ -472,7 +472,8 @@ let ANIM = {
             Player.activaBtnSiguiente();
             Player.tooglePlayPauseIco();
             Player.resetSubtitulos();
-            console.log("fin_escena 4");
+            Player.playSoundFX('cancion_baile');
+            ANIM.fadeVolume('cancion_baile',1,0,33);
         }, "fin_escena_4");
         
         
@@ -750,16 +751,26 @@ let ANIM = {
         ANIM.anim_interact_4_pareja = new TimelineMax();
         ANIM.anim_interact_4_pareja
             .addLabel('inicio')
-            .addCallback(function(){
-                Player.playSoundFX('cancion_baile_cortada');
-                Player.cambiaVolume('cancion_baile_cortada', 0.5);
-            },0)
+            //Reloj
+            .to('#escena_04 .puntero', 9.2, {rotation: "360", repeat:1, ease: Linear.easeNone,transformOrigin: '3px 4px'},0)
+            //Pareja
             .fromTo('#escena_04 .principesEs04',2.4,{backgroundPosition:'0% 0%'}, {backgroundPosition:'-200% 0%', ease: SteppedEase.config(2), x:300, repeat:6},0)
             .to('#escena_04 .principesEs04', 2,{x:-15, yoyo:true})
+            //Reyes
+            .addCallback(function(){
+                Player.playSoundFX('mujer_asombrada');
+                Player.cambiaVolume('mujer_asombrada', 0.5);
+            }, 1) 
+            .fromTo('#escena_04 .reina',1,{backgroundPosition:'0% 0%'}, {backgroundPosition:'-200% 0%', ease: SteppedEase.config(2)}, 1)
+            .fromTo('#escena_04 .rey',1,{backgroundPosition:'0% 0%'}, {backgroundPosition:'-200% 0%', ease: SteppedEase.config(2)}, 1)
+            //Hermanastra y Madrastra
+            .fromTo('#escena_04 .hermanaEs04', 1,{backgroundPosition:'0% 0%'},{backgroundPosition:'-200% 0%', ease: SteppedEase.config(2)}, 3)
+            .fromTo('#escena_04 .madrastraEs04', 1,{backgroundPosition:'0% 0%'},{backgroundPosition:'-200% 0%', ease: SteppedEase.config(2)}, 3)
+            .fromTo('#escena_04 .hermana2Es04', 1,{backgroundPosition:'0% 0%'},{backgroundPosition:'-200% 0%', ease: SteppedEase.config(2)}, 3) 
             .addLabel('final')
         ANIM.anim_interact_4_pareja.pause(); 
 
-        ANIM.anim_interact_4_reyes = new TimelineMax();
+        /* ANIM.anim_interact_4_reyes = new TimelineMax();
         ANIM.anim_interact_4_reyes
             .addLabel('inicio')
             .addCallback(function(){
@@ -783,9 +794,9 @@ let ANIM = {
         ANIM.anim_interact_4_puntero = new TimelineMax();
         ANIM.anim_interact_4_puntero
             .addLabel('inicio')
-            .to('#escena_04 .puntero', 9.2, {rotation: "360", repeat:1, ease: Linear.easeNone,transformOrigin: '3px 4px'},0)
+            
             .addLabel('final');
-        ANIM.anim_interact_4_puntero.pause();      
+        ANIM.anim_interact_4_puntero.pause();     */  
         
         ANIM.anim_interact_5_nubes = new TimelineMax({repeat:1, yoyo:true});
         ANIM.anim_interact_5_nubes 
@@ -870,7 +881,7 @@ let ANIM = {
         ANIM.anim_interact_7_principes.pause(); 
 
         ANIM.anim_interact_8_confetti = new TimelineMax(); 
-        let confetis = 25;
+        let confetis = 35;
         for(let i=confetis-1; i>=0; i--){
             let pos1=Math.floor((Math.random() * 100) + 1);
             let pos2=Math.floor((Math.random() * 100) + 1);
@@ -899,11 +910,12 @@ let ANIM = {
             .addLabel('inicio')
             .addCallback(function(){
                 Player.playSoundFX('celebracion_campanas');
-                Player.cambiaVolume('celebracion_campanas', 0.5);
+                ANIM.fadeVolume('celebracion_campanas',0.5,0,20);
+                //Player.cambiaVolume('celebracion_campanas', 0.5);
             }, 0)
-            .fromTo('#escena_08 .reyes08', 1, {backgroundPosition:'0% 0%'},{backgroundPosition:'-200% 0%', ease: SteppedEase.config(2), repeat:10},2)
-            .fromTo('#escena_08 .mujeres08', 1, {backgroundPosition:'0% 0%'},{backgroundPosition:'-200% 0%', ease: SteppedEase.config(2), repeat:10},2)
-            .fromTo('#escena_08 .principes08', 3, {backgroundPosition:'100% 0%'},{backgroundPosition:'0% 0%', ease: SteppedEase.config(1), repeat: 3},1)
+            .fromTo('#escena_08 .reyes08', 1, {backgroundPosition:'0% 0%'},{backgroundPosition:'-200% 0%', ease: SteppedEase.config(2), repeat:16},2)
+            .fromTo('#escena_08 .mujeres08', 1, {backgroundPosition:'0% 0%'},{backgroundPosition:'-200% 0%', ease: SteppedEase.config(2), repeat:16},2)
+            .fromTo('#escena_08 .principes08', 3, {backgroundPosition:'100% 0%'},{backgroundPosition:'0% 0%', ease: SteppedEase.config(1)},1.5)
             .addLabel('final');
         ANIM.anim_interact_8_reyes.pause();
   
@@ -932,9 +944,6 @@ let ANIM = {
             ANIM.anim_interact_3_transform2,
 
             ANIM.anim_interact_4_pareja,
-            ANIM.anim_interact_4_reyes,
-            ANIM.anim_interact_4_mujeres,
-            ANIM.anim_interact_4_puntero,
 
             ANIM.anim_interact_5_nubes,
             ANIM.anim_interact_5_cenicienta,
@@ -1142,30 +1151,7 @@ let ANIM = {
                     });
                 }
 
-                if(btn.hasClass('primario')){
-                    btn.click(function(){
-                        $(this).css({"display":"none"});
-                        ANIM.anim_interact_4_reyes.eventCallback("onComplete", muestralo, [$(this), cb]);   
-                        ANIM.anim_interact_4_reyes.play(0);
-                    });
-                }
-
-                if(btn.hasClass('primario')){
-                    btn.click(function(){
-                        $(this).css({"display":"none"});
-                        ANIM.anim_interact_4_mujeres.eventCallback("onComplete", muestralo, [$(this), cb]);   
-                        ANIM.anim_interact_4_mujeres.play(0);
-                    });
-                 } 
-
-                 if(btn.hasClass('primario')){
-                    btn.click(function(){
-                        $(this).css({"display":"none"});
-                        ANIM.anim_interact_4_puntero.eventCallback("onComplete", muestralo, [$(this), cb]);   
-                        ANIM.anim_interact_4_puntero.play(0);
-                    });
-                 } 
-                 break;
+                break;
              case 5:
                     
                  if (btn.hasClass('primario')) {
